@@ -6,11 +6,13 @@ import MyRecipeBook from './MyRecipeBook';  //required us to install react-route
 import Login from './Login';
 import SignUp from './SignUp';
 import {Route, Link, Routes} from 'react-router-dom';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
     <>
     <h1>Not My Fitness Pal</h1>
+    <NavBar  />
     <Routes>
       <Route exact path= "/" element={<Home />} />
       <Route exact path= "/RecipeBook" element={<RecipeBook />} />

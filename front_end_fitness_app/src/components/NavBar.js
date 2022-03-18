@@ -4,11 +4,11 @@ const NavBar = () => {
 
     return(
         <>
-            <ul>
-                <li><Link to="/" >Home</Link></li>
-                <li><Link to="/RecipeBook" target="_blank" rel="noopener noreferrer">Recipe Book</Link></li>
-                <li><Link to="/Login" target="_blank" rel="noopener noreferrer">Login</Link></li>
-                <li><Link to="/SignUp" target="_blank" rel="noopener noreferrer">Sign Up</Link></li>
+            <ul id="navbar">
+                <li className="navitem"><Link to="/" >Home</Link></li>
+                <li className="navitem"><Link to="/RecipeBook" target="_blank" rel="noopener noreferrer">Recipe Book</Link></li>
+                <li className="navitem"><Link to="/Login" target="_blank" rel="noopener noreferrer">Login</Link></li>
+                <li className="navitem"><Link to="/SignUp" target="_blank" rel="noopener noreferrer">Sign Up</Link></li>
             </ul>
         </>
     )

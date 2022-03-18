@@ -1,3 +1,9 @@
+:root {
+  --heading-colour: #b1d056; 
+  --orange: #ffa33e;
+  --dark-green: #e0ff59;
+}
+
 .App {
   text-align: center;
 }
@@ -38,6 +44,21 @@
 }
 
 h1{
-  color: #b1d056;
+  color: var(--heading-colour);
   padding: 20px;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  background-color: var(--orange);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navitem a {
+  color: var(--dark-green);
+  text-decoration: none;
+  
 }

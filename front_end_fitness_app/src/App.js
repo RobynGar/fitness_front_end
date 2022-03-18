@@ -7,8 +7,16 @@ import Login from './Login';
 import SignUp from './SignUp';
 import {Route, Link, Routes} from 'react-router-dom';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 function App() {
+
+  // fetch data from "localhost:8080/food/all"
+
+  // handleFoodFormSubmit 
+  
+
+
   return (
     <>
     <h1>Not My Fitness Pal</h1>
@@ -20,6 +28,7 @@ function App() {
       <Route exact path= "/Login" element={<Login />} />
       <Route exact path= "/SignUp" element={<SignUp />} />
     </Routes>
+    <Footer />
     </>
   );
 }

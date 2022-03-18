@@ -62,3 +62,22 @@ h1{
   text-decoration: none;
   
 }
+
+#footer {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  background-color: var(--orange);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  font-size: small;
+}
+
+.footeritem {
+  color: var(--dark-green);
+  text-decoration: none;
+  
+}

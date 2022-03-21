@@ -16,7 +16,7 @@ function App() {
   // fetch food data from "localhost:8080/food/all"
   useEffect(() => {
     fetch("http://localhost:8080/food/all")
-     .then(response => response.json() )
+     .then(response => response.json())
      .then(data => setRecipeList(data))
   },[])
 
@@ -38,6 +38,16 @@ function App() {
 
   }
 
+  const handleMealTypeFilter = (event) => {
+    let filterValue = event.value;
+    let filteredArray = [...recipeList]
+    setRecipeList(filteredArray.filter(recipe => {
+        console.log(recipe.mealType.includes(filterValue));
+        if (recipe.mealType.includes(filterValue)) return recipe;
+    }))
+}
+
+
   // log in ID as state
 
   return (
@@ -46,7 +56,7 @@ function App() {
     <NavBar  />
     <Routes>
       <Route exact path= "/" element={<Home />} />
-      <Route exact path= "/RecipeBook" element={<RecipeBook recipeList = {recipeList} />} />
+      <Route exact path= "/RecipeBook" element={<RecipeBook recipeList = {recipeList} onFilterSelection={handleMealTypeFilter}/>} />
       <Route exact path= "/MyRecipeBook" element={<MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} />} />
       <Route exact path= "/Login" element={<Login />} />
       <Route exact path= "/SignUp" element={<SignUp />} />

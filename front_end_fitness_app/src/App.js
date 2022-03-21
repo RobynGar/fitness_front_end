@@ -10,10 +10,16 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 
 function App() {
+   const [foodList, setFoodList] 
+
+  // log in ID as state in here 
+
 
   // fetch data from "localhost:8080/food/all"
 
   // handleFoodFormSubmit 
+
+  // food list as a state
   
 
 

@@ -11,14 +11,18 @@ import Footer from './components/Footer';
 import {useState, useEffect} from 'react';
 
 function App() {
-  const [foodList, setFoodList] = useState([]);
+  const [recipeList, setRecipeList] = useState([]);
 
-  // fetch data from "localhost:8080/food/all"
+  // fetch food data from "localhost:8080/food/all"
   useEffect(() => {
     fetch("http://localhost:8080/food/all")
      .then(response => response.json() )
-     .then(data => setFoodList(data))
+     .then(data => setRecipeList(data))
   },[])
+
+  // create state for people
+  // fetch people data from "localhost:8080/person/all"
+  // addPersonToDatabase logic (will be passed down as prop to Signup component)
 
   // handleFoodFormSubmit 
   const addRecipeToDatabase = (newRecipe) => {
@@ -30,9 +34,11 @@ function App() {
        body:JSON.stringify(newRecipe)
      })
      .then(response => response.json())
-     .then(data => setFoodList([...foodList, data]))
+     .then(data => setRecipeList([...recipeList, data]))
 
   }
+
+  // log in ID as state
 
   return (
     <>
@@ -40,8 +46,8 @@ function App() {
     <NavBar  />
     <Routes>
       <Route exact path= "/" element={<Home />} />
-      <Route exact path= "/RecipeBook" element={<RecipeBook foodList = {foodList} />} />
-      <Route exact path= "/MyRecipeBook" element={<MyRecipeBook foodList = {foodList} onRecipeSubmission = {addRecipeToDatabase} />} />
+      <Route exact path= "/RecipeBook" element={<RecipeBook recipeList = {recipeList} />} />
+      <Route exact path= "/MyRecipeBook" element={<MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} />} />
       <Route exact path= "/Login" element={<Login />} />
       <Route exact path= "/SignUp" element={<SignUp />} />
     </Routes>

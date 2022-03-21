@@ -1,8 +1,10 @@
 import Recipe from "./components/Recipe";
 
-const RecipeBook = ({foodList}) => {
-    const foodMap = foodList.map(recipe => {
-        return <Recipe recipe = {recipe} key={recipe.id}/>
+const RecipeBook = ({recipeList}) => {
+    const recipeMap = recipeList.map(recipe => {
+        return <Recipe 
+                    recipe={recipe} 
+                    key={recipe.id} />
     }) 
 
 
@@ -10,13 +12,11 @@ const RecipeBook = ({foodList}) => {
     return(
         <>
             <h1>All Recipes</h1>
-            {foodMap}
+            {recipeMap}
         </>
     )
 }
 
 export default RecipeBook;
-
-// pass food list as a prop 
 
 // filter drop down by meal type

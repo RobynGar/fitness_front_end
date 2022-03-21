@@ -33,7 +33,7 @@ const RecipeForm = ({onRecipeSubmission}) => {
         setDay(event.target.value);
     }
 
-    const handleFoodFormSubmit = (event) => {
+    const handleRecipeFormSubmit = (event) => {
         event.preventDefault();
         if (!name || !mealType || !notes || !calories || !week || !day) {
             alert("Not all information provided");
@@ -62,7 +62,7 @@ const RecipeForm = ({onRecipeSubmission}) => {
 
     return (
         <>
-            <form onSubmit={handleFoodFormSubmit}>
+            <form onSubmit={handleRecipeFormSubmit}>
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" value={name} onChange={handleNameChange}></input>
 

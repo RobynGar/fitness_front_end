@@ -1,7 +1,7 @@
 
 // Don't print out personal ID, week or day
 
-// De-structure food object as a prop from RecipeBook 
+// De-structure recipe object as a prop from RecipeBook 
 
 const Recipe = ({recipe}) => {
     return(
@@ -10,9 +10,6 @@ const Recipe = ({recipe}) => {
         <h2> {recipe.name} </h2>
         </>
     )
-
-
-
 }
 
 export default Recipe;

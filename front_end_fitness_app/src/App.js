@@ -8,20 +8,31 @@ import SignUp from './SignUp';
 import {Route, Link, Routes} from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import {useState, useEffect} from 'react';
 
 function App() {
-   const [foodList, setFoodList]  
-
-  // log in ID as state in here 
-
+  const [foodList, setFoodList] = useState([]);
 
   // fetch data from "localhost:8080/food/all"
+  useEffect(() => {
+    fetch("http://localhost:8080/food/all")
+     .then(response => response.json() )
+     .then(data => setFoodList(data))
+  },[])
 
   // handleFoodFormSubmit 
+  const addRecipeToDatabase = (newRecipe) => {
+     fetch("http;//localhost:8080/food", {
+       method:"POST",
+       headers:{
+         "Content-Type": "application/json"
+       },
+       body:JSON.stringify(newRecipe)
+     })
+     .then(response => response.json())
+     .then(data => setFoodList([...foodList, data]))
 
-  // food list as a state
-  
-
+  }
 
   return (
     <>

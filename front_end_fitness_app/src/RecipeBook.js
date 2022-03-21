@@ -1,8 +1,16 @@
-const RecipeBook = () => {
+import Recipe from "./components/Recipe";
+
+const RecipeBook = ({foodList}) => {
+    const foodMap = foodList.map(recipe => {
+        return <Recipe recipe = {recipe} key={recipe.id}/>
+    }) 
+
+
 
     return(
         <>
             <h1>All Recipes</h1>
+            {foodMap}
         </>
     )
 }

@@ -40,8 +40,8 @@ function App() {
     <NavBar  />
     <Routes>
       <Route exact path= "/" element={<Home />} />
-      <Route exact path= "/RecipeBook" element={<RecipeBook />} />
-      <Route exact path= "/MyRecipeBook" element={<MyRecipeBook />} />
+      <Route exact path= "/RecipeBook" element={<RecipeBook foodList = {foodList} />} />
+      <Route exact path= "/MyRecipeBook" element={<MyRecipeBook foodList = {foodList} onRecipeSubmission = {addRecipeToDatabase} />} />
       <Route exact path= "/Login" element={<Login />} />
       <Route exact path= "/SignUp" element={<SignUp />} />
     </Routes>

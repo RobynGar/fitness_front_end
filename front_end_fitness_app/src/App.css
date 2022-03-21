@@ -71,7 +71,7 @@ h1{
   padding-top: 10px;
   padding-bottom: 10px;
   bottom: 0;
-  position: absolute;
+  position: relative;
   width: 100%;
   font-size: small;
 }

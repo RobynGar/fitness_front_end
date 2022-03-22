@@ -69,11 +69,12 @@ const filtered = React.useMemo(() => {
 
 
   // fetch person data from "localhost:8080/person/{id}"
-  const getId = useRef(null)
+  const getId = useRef(0)
   const [getResult, setGetResult] = useState(null)
+  const [Id, setId] = useState (getId.current.value)
 
   async function getPersonById () {
-    const Id = getId.current.value
+    console.log("Login function being called");
     if(Id){
       try{
         const Res = await fetch(`http;//localhost:8080/person/${Id}`)
@@ -92,11 +93,21 @@ const filtered = React.useMemo(() => {
           },
         };
         setGetResult(JSON.stringify(Result, null, 2))
+        console.log("Login function being called 3");
       }
       catch(err){
         setGetResult(err.message)
       }
     }
+    console.log("Login function being called 2");
+  }
+
+  const handlePersonLoginSubmit = (event) => {
+    setId (0)
+    event.preventDefault()
+    getPersonById(event.target.value)
+
+
   }
 
   // addPersonToDatabase logic (will be passed down as prop to Signup component)
@@ -112,7 +123,7 @@ const filtered = React.useMemo(() => {
       <Route exact path= "/" element={<Home />} />
       <Route exact path= "/RecipeBook" element={<RecipeBook recipeList = {recipeList} onRecipeFilter={filterChange} filtered={filtered}/>} />
       <Route exact path= "/MyRecipeBook" element={<MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} />} />
-      <Route exact path= "/Login" element={<Login peopleList={peopleList} recipeList={recipeList} onLogin={getPersonById} getId={getId}/>} />
+      <Route exact path= "/Login" element={<Login peopleList={peopleList} recipeList={recipeList} onLogin={getPersonById} getId={getId} handleUsername={handlePersonLoginSubmit}/>} />
       <Route exact path= "/SignUp" element={<SignUp />} />
     </Routes>
     <Footer />

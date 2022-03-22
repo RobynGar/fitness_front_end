@@ -74,7 +74,6 @@ const filtered = React.useMemo(() => {
   const [Id, setId] = useState (getId.current.value)
 
   async function getPersonById () {
-    console.log("Login function being called");
     if(Id){
       try{
         const Res = await fetch(`http;//localhost:8080/person/${Id}`)
@@ -93,13 +92,11 @@ const filtered = React.useMemo(() => {
           },
         };
         setGetResult(JSON.stringify(Result, null, 2))
-        console.log("Login function being called 3");
       }
       catch(err){
         setGetResult(err.message)
       }
     }
-    console.log("Login function being called 2");
   }
 
   const handlePersonLoginSubmit = (event) => {

@@ -8,7 +8,8 @@ import SignUp from './SignUp';
 import {Route, Link, Routes} from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useMemo} from 'react';
+import Recipe from './components/Recipe';
 
 function App() {
   const [recipeList, setRecipeList] = useState([]);
@@ -37,13 +38,25 @@ function App() {
      .then(data => setRecipeList([...recipeList, data]))
 
   }
+ const [filteredRecipe, setFilteredRecipe] = useState("");
 
-  const handleFilterChange = (event) => {
-    let filteredArray = [...recipeList]
-    setRecipeList(filteredArray.filter(recipe => {
-    if (recipe.mealType === event.value) return recipe;
-}))
-}
+  const filterChange = (event) => {
+    setFilteredRecipe(event.value);
+  }
+
+//     let filteredArray = [...recipeList]
+//     setRecipeList(filteredArray.filter(recipe => {
+//     if (recipe.mealType === event.value) return recipe;
+// }))
+const filtered = React.useMemo(() => {
+  return recipeList.filter(recipe => {
+    return filteredRecipe.length > 0 ? recipe.mealType.includes(filteredRecipe) : true;
+  })
+ }, [filteredRecipe, recipeList]);
+//  {filtered}.map((recipe) => {
+//   )}
+
+
   // person object as state
   // if retrieved person object is not null, render the MyRecipeBook page (conditional rendering)
   // pass person object as prop down to MyRecipeBook to load this person's Recipes
@@ -54,7 +67,7 @@ function App() {
     <NavBar  />
     <Routes>
       <Route exact path= "/" element={<Home />} />
-      <Route exact path= "/RecipeBook" element={<RecipeBook recipeList = {recipeList} onRecipeFilter={handleFilterChange}/>} />
+      <Route exact path= "/RecipeBook" element={<RecipeBook recipeList = {recipeList} onRecipeFilter={filterChange} filtered={filtered}/>} />
       <Route exact path= "/MyRecipeBook" element={<MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} />} />
       <Route exact path= "/Login" element={<Login />} />
       <Route exact path= "/SignUp" element={<SignUp />} />

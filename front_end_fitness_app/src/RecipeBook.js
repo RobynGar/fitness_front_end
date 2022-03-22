@@ -3,7 +3,7 @@ import Select from "react-select";
 import { useState } from "react";
 
 
-const RecipeBook = ({recipeList, onRecipeFilter}) => {
+const RecipeBook = ({recipeList, onRecipeFilter, filtered}) => {
 
     // filters through all the recipes (recipeList prop) and only displays those that are unique
     const uniqueRecipes = recipeList.filter((recipe, index, array) => {
@@ -17,9 +17,16 @@ const RecipeBook = ({recipeList, onRecipeFilter}) => {
                     recipe={recipe} 
                     key={recipe.id} />
     })
+// filters but need to incorporate the unique name and notes
+    const filteredMap = filtered.map(recipe => {
+        return <Recipe 
+        recipe={recipe} 
+        key={recipe.id} />
+    }) 
 
     // the different options within our dropdown filter
     const mealTypeOptions = [
+        {label: 'ALL', value: ''},
         {label: 'BREAKFAST', value: 'BREAKFAST'},
         {label: 'LUNCH', value: 'LUNCH'},
         {label: 'DINNER', value: 'DINNER'},
@@ -31,8 +38,10 @@ const RecipeBook = ({recipeList, onRecipeFilter}) => {
             <h1>All Recipes</h1>
             <Select 
                 options={mealTypeOptions}
-                onChange={onRecipeFilter} />
-            {recipeMap}
+                onChange={onRecipeFilter} /> 
+            {filteredMap}
+            
+            
         </>
     )
 }

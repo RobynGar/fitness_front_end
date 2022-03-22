@@ -10,8 +10,10 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import {useState, useEffect, useMemo, useRef} from 'react';
 import Recipe from './components/Recipe';
+import auth from './Auth';
 
-function App() {
+
+function App(props) {
 
   // --------------------RECIPE SECTION------------------------
   const [recipeList, setRecipeList] = useState([]);
@@ -99,11 +101,17 @@ const filtered = React.useMemo(() => {
     }
   }
 
+const authFunction = () => {
+  auth.login(() => {
+    this.props.history.push("/person")
+  })
+}
+
   const handlePersonLoginSubmit = (event) => {
     setId (0)
     event.preventDefault()
     getPersonById(event.target.value)
-
+    authFunction();
 
   }
 

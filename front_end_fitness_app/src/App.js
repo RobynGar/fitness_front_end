@@ -20,8 +20,8 @@ function App() {
      .then(data => setRecipeList(data))
   },[])
 
-  // create state for people
-  // fetch people data from "localhost:8080/person/all"
+  // retrieved person object state
+  // fetch person data from "localhost:8080/person/{id}"
   // addPersonToDatabase logic (will be passed down as prop to Signup component)
 
   // handleFoodFormSubmit 
@@ -38,17 +38,15 @@ function App() {
 
   }
 
-  const handleMealTypeFilter = (event) => {
-    let filterValue = event.value;
+  const handleFilterChange = (event) => {
     let filteredArray = [...recipeList]
     setRecipeList(filteredArray.filter(recipe => {
-        console.log(recipe.mealType.includes(filterValue));
-        if (recipe.mealType.includes(filterValue)) return recipe;
-    }))
+    if (recipe.mealType === event.value) return recipe;
+}))
 }
-
-
-  // log in ID as state
+  // person object as state
+  // if retrieved person object is not null, render the MyRecipeBook page (conditional rendering)
+  // pass person object as prop down to MyRecipeBook to load this person's Recipes
 
   return (
     <>
@@ -56,7 +54,7 @@ function App() {
     <NavBar  />
     <Routes>
       <Route exact path= "/" element={<Home />} />
-      <Route exact path= "/RecipeBook" element={<RecipeBook recipeList = {recipeList} onFilterSelection={handleMealTypeFilter}/>} />
+      <Route exact path= "/RecipeBook" element={<RecipeBook recipeList = {recipeList} onRecipeFilter={handleFilterChange}/>} />
       <Route exact path= "/MyRecipeBook" element={<MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} />} />
       <Route exact path= "/Login" element={<Login />} />
       <Route exact path= "/SignUp" element={<SignUp />} />

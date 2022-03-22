@@ -4,11 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom'; //import the Browser Router which allows us to use the URL to navigate to different pages in our app
+import {UserProvider} from './UserContext';
 
 ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
+      <UserProvider>
       <App />
+      </UserProvider>
     </React.StrictMode>
   </BrowserRouter>,
 document.getElementById('root')

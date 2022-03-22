@@ -62,6 +62,10 @@ const filtered = React.useMemo(() => {
   // pass person object as prop down to MyRecipeBook to load this person's Recipes
 
 
+  const { user } = useContext(UserContext);
+
+
+
   const [peopleList, setPeopleList] = useState([]);
   useEffect(() => {
       fetch("http://localhost:8080/person/all")
@@ -71,50 +75,7 @@ const filtered = React.useMemo(() => {
 
 
   // fetch person data from "localhost:8080/person/{id}"
-  const getId = useRef(0)
-  const [getResult, setGetResult] = useState(null)
-  const [Id, setId] = useState (getId.current.value)
 
-  async function getPersonById () {
-    if(Id){
-      try{
-        const Res = await fetch(`http;//localhost:8080/person/${Id}`)
-        if(!Res.ok){
-          const message = `An error has occured: ${Res.status} - ${Res.statusText}`;
-          throw new Error(message);
-        }
-        const data = await Res.json()
-        const Result = {
-          data: data,
-          status: Res.status,
-          statusText: Res.statusText,
-          headers: {
-            "Content-Type": Res.headers.get("Content-Type"),
-            "Content-Length": Res.headers.get("Content-Length"),
-          },
-        };
-        setGetResult(JSON.stringify(Result, null, 2))
-      }
-      catch(err){
-        setGetResult(err.message)
-      }
-    }
-  }
-
-// const authFunction = () => {
-//   auth.login(() => {
-//     this.props.history.push("/person")
-//   })
-// }
-
-  const handlePersonLoginSubmit = (event) => {
-    setId (0)
-    event.preventDefault()
-    getPersonById(event.target.value)
-    // authFunction();
-    localStorage.setItem('token', '1')
-
-  }
 
   // addPersonToDatabase logic (will be passed down as prop to Signup component)
 
@@ -132,7 +93,7 @@ const filtered = React.useMemo(() => {
       <Route exact path= "/Login" element={<Login peopleList={peopleList} recipeList={recipeList} onLogin={getPersonById} getId={getId} handleUsername={handlePersonLoginSubmit}/>} />
       <Route exact path= "/SignUp" element={<SignUp />} />
     </Routes>
-   
+    user.auth ? <Person /> : <Login />;
     <Footer />
     </>
   );

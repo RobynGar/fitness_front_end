@@ -63,6 +63,40 @@ h1{
   
 }
 
+#home-pic {
+  /* margin-right: 0;
+  margin-left: auto;
+  display: block; */
+  /* float: right;
+  margin: 10px; */
+  width: 50%;
+  height: 400px;
+}
+
+#home-para {
+  width: 50%
+}
+
+#container {
+  display: flex;
+  width: 70%;
+  text-align: center;
+  margin: auto;
+  
+}
+
+#text-container p {
+  margin: auto;
+}
+
+#text-container p {
+  font-size: large;
+}
+
+#text-container {
+  align-self: center;
+}
+
 #footer {
   display: flex;
   justify-content: space-around;

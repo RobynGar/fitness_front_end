@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "base": "^3.0.0",
+    "react-select": "^5.2.2"
+  }
+}

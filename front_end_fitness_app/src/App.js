@@ -10,6 +10,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import {useState, useEffect, useMemo} from 'react';
 import Recipe from './components/Recipe';
+import PeopleContainer from './containers/PeopleContainer';
 
 function App() {
   const [recipeList, setRecipeList] = useState([]);
@@ -72,6 +73,7 @@ const filtered = React.useMemo(() => {
       <Route exact path= "/Login" element={<Login />} />
       <Route exact path= "/SignUp" element={<SignUp />} />
     </Routes>
+    <PeopleContainer recipeList={recipeList}/>
     <Footer />
     </>
   );

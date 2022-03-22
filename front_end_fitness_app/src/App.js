@@ -8,11 +8,12 @@ import SignUp from './SignUp';
 import {Route, Link, Routes} from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import {useState, useEffect, useMemo} from 'react';
+import {useState, useEffect, useMemo, useRef} from 'react';
 import Recipe from './components/Recipe';
-import PeopleContainer from './containers/PeopleContainer';
 
 function App() {
+
+  // --------------------RECIPE SECTION------------------------
   const [recipeList, setRecipeList] = useState([]);
 
   // fetch food data from "localhost:8080/food/all"
@@ -21,10 +22,6 @@ function App() {
      .then(response => response.json())
      .then(data => setRecipeList(data))
   },[])
-
-  // retrieved person object state
-  // fetch person data from "localhost:8080/person/{id}"
-  // addPersonToDatabase logic (will be passed down as prop to Signup component)
 
   // handleFoodFormSubmit 
   const addRecipeToDatabase = (newRecipe) => {
@@ -54,13 +51,58 @@ const filtered = React.useMemo(() => {
     return filteredRecipe.length > 0 ? recipe.mealType.includes(filteredRecipe) : true;
   })
  }, [filteredRecipe, recipeList]);
-//  {filtered}.map((recipe) => {
-//   )}
 
+  // --------------------PEOPLE SECTION------------------------
+  // retrieved person object state
 
   // person object as state
   // if retrieved person object is not null, render the MyRecipeBook page (conditional rendering)
   // pass person object as prop down to MyRecipeBook to load this person's Recipes
+
+
+  const [peopleList, setPeopleList] = useState([]);
+  useEffect(() => {
+      fetch("http://localhost:8080/person/all")
+      .then(response => response.json())
+      .then(data => setPeopleList(data))
+  },[]);
+
+
+  // fetch person data from "localhost:8080/person/{id}"
+  const getId = useRef(null)
+  const [getResult, setGetResult] = useState(null)
+
+  async function getPersonById () {
+    const Id = getId.current.value
+    if(Id){
+      try{
+        const Res = await fetch(`http;//localhost:8080/person/${Id}`)
+        if(!Res.ok){
+          const message = `An error has occured: ${Res.status} - ${Res.statusText}`;
+          throw new Error(message);
+        }
+        const data = await Res.json()
+        const Result = {
+          data: data,
+          status: Res.status,
+          statusText: Res.statusText,
+          headers: {
+            "Content-Type": Res.headers.get("Content-Type"),
+            "Content-Length": Res.headers.get("Content-Length"),
+          },
+        };
+        setGetResult(JSON.stringify(Result, null, 2))
+      }
+      catch(err){
+        setGetResult(err.message)
+      }
+    }
+  }
+
+  // addPersonToDatabase logic (will be passed down as prop to Signup component)
+
+
+
 
   return (
     <>
@@ -70,10 +112,9 @@ const filtered = React.useMemo(() => {
       <Route exact path= "/" element={<Home />} />
       <Route exact path= "/RecipeBook" element={<RecipeBook recipeList = {recipeList} onRecipeFilter={filterChange} filtered={filtered}/>} />
       <Route exact path= "/MyRecipeBook" element={<MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} />} />
-      <Route exact path= "/Login" element={<Login />} />
+      <Route exact path= "/Login" element={<Login peopleList={peopleList} recipeList={recipeList} onLogin={getPersonById} getId={getId}/>} />
       <Route exact path= "/SignUp" element={<SignUp />} />
     </Routes>
-    <PeopleContainer recipeList={recipeList}/>
     <Footer />
     </>
   );

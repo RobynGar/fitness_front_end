@@ -1,15 +1,12 @@
-import PeopleContainer from "./containers/PeopleContainer";
+const Login = ({peopleList, recipeList, onLogin, getId}) => {
 
-const Login = ({onLogin, getId}) => {
-
-  
-
-    return(
+    return (
         <>
             <h1>Login Page</h1>
             <form onSubmit={onLogin}>
                 <label htmlFor="username">Username:</label>
-                <input type="number" id="username"  ref={getId}></input>
+                <input type="number" id="username" ref={getId} />
+                <input type="submit" value="Login"/>
             </form>
         </>
     )

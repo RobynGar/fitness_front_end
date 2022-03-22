@@ -10,7 +10,7 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import {useState, useEffect, useMemo, useRef} from 'react';
 import Recipe from './components/Recipe';
-import auth from './Auth';
+import auth from './Route';
 
 
 function App(props) {
@@ -101,17 +101,18 @@ const filtered = React.useMemo(() => {
     }
   }
 
-const authFunction = () => {
-  auth.login(() => {
-    this.props.history.push("/person")
-  })
-}
+// const authFunction = () => {
+//   auth.login(() => {
+//     this.props.history.push("/person")
+//   })
+// }
 
   const handlePersonLoginSubmit = (event) => {
     setId (0)
     event.preventDefault()
     getPersonById(event.target.value)
-    authFunction();
+    // authFunction();
+    localStorage.setItem('token', '1')
 
   }
 
@@ -131,6 +132,7 @@ const authFunction = () => {
       <Route exact path= "/Login" element={<Login peopleList={peopleList} recipeList={recipeList} onLogin={getPersonById} getId={getId} handleUsername={handlePersonLoginSubmit}/>} />
       <Route exact path= "/SignUp" element={<SignUp />} />
     </Routes>
+   
     <Footer />
     </>
   );

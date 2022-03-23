@@ -34,7 +34,7 @@ public class SpringGlobalConfig implements WebMvcConfigurer {
 
                 .allowedMethods("GET");
 
-        registry.addMapping("/person/{id}")
+        registry.addMapping("/person/**")
 
                 .allowedOrigins("http://localhost:3000")
 

@@ -3,11 +3,13 @@ import { UserContext } from './UserContext';
 
 const Login = ({peopleList, recipeList}) => {
     
-    const {user,login} = useContext(UserContext);
+    const {user,login, setUser} = useContext(UserContext);
     const [id, setId] = useState();
     const handleIdChange = (event) => {
         setId(event.target.value)
+        // setUser(id, true)
     }
+    
 
 
     return (

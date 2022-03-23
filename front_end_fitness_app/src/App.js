@@ -29,7 +29,7 @@ function App() {
 
   // handleFoodFormSubmit 
   const addRecipeToDatabase = (newRecipe) => {
-     fetch("http;//localhost:8080/food", {
+     fetch("http://localhost:8080/food", {
        method:"POST",
        headers:{
          "Content-Type": "application/json"

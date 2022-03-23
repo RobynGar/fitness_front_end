@@ -1,13 +1,13 @@
 import RecipeForm from "./components/RecipeForm";
 import { UserContext } from "./UserContext";
 import { useContext,useState } from "react";
-import Recipe from "./components/Recipe";
+import MyRecipe from "./components/MyRecipe";
 
 const MyRecipeBook = ({onRecipeSubmission, recipeList, filteredById}) => {
     const {user} = useContext(UserContext);
 
     const filteredRecipeByIdMap = filteredById.map(recipe => {
-        return <Recipe 
+        return <MyRecipe 
             recipe={recipe} 
             key={recipe.id} />
     }) 

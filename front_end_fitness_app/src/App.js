@@ -85,18 +85,26 @@ const filtered = React.useMemo(() => {
 
   // addPersonToDatabase logic (will be passed down as prop to Signup component)
 
-  const [filteredById,setFilteredById] = useState("");
+  const [filteredById,setFilteredById] = useState([]);
+  
+  useEffect(() => {
+    console.log(recipeList);
+    const filteredRecipeById = recipeList.filter(recipe => recipe.person_id == user.id)
+    setFilteredById(filteredRecipeById)
+    console.log(filteredRecipeById);
+  },[user,recipeList])
+
+
   
 
-
-  const filteredRecipeById = React.useMemo(() => {
-    return recipeList.filter(recipe => {
-      return filteredById.length > 0 ? recipe.find(recipe => recipe.person_id === user.id) : true;
-    })
-    //return recipeList.filter(recipe => {
-  //   return filteredRecipe.length > 0 ? recipe.mealType.includes(filteredRecipe) : true;
-  // })
-   }, [filteredById, recipeList]);
+  // const filteredRecipeById = React.useMemo(() => {
+  //   return recipeList.filter(recipe => {
+  //     return filteredById > 0 ? recipe.person_id === user.id : true;
+  //   })
+  //   //return recipeList.filter(recipe => {
+  // //   return filteredRecipe.length > 0 ? recipe.mealType.includes(filteredRecipe) : true;
+  // // })
+  //  }, [filteredById, recipeList]);
 
 
   return (
@@ -106,7 +114,7 @@ const filtered = React.useMemo(() => {
     <Routes>
       <Route exact path= "/" element={<Home />} />
       <Route exact path= "/RecipeBook" element={<RecipeBook recipeList = {recipeList} onRecipeFilter={filterChange} filtered={filtered}/>} />
-      <Route exact path= "/MyRecipeBook" element={user.auth ? <MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} filteredRecipeById={filteredRecipeById}/> : <Home />} />
+      <Route exact path= "/MyRecipeBook" element={user.auth ? <MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} filteredById={filteredById}/> : <Home />} />
       <Route exact path= "/Login" element={!user.auth ? <Login peopleList={peopleList} recipeList={recipeList} /> : <Navigate replace to="/MyRecipeBook"/>} />
       <Route exact path= "/SignUp" element={<SignUp />} />
     </Routes>

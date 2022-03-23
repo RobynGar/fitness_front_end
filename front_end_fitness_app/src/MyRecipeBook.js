@@ -3,7 +3,7 @@ import { UserContext } from "./UserContext";
 import { useContext,useState } from "react";
 import Recipe from "./components/Recipe";
 
-const MyRecipeBook = ({onRecipeSubmission, recipeList, filteredRecipeById}) => {
+const MyRecipeBook = ({onRecipeSubmission, recipeList, filteredById}) => {
     const {user} = useContext(UserContext);
     
     // const filteredRecipe = recipeList.filter((recipe,index,array) => {
@@ -71,7 +71,7 @@ const MyRecipeBook = ({onRecipeSubmission, recipeList, filteredRecipeById}) => {
     //     })
     // }
 
-    const filteredRecipeByIdMap = filteredRecipeById.map(recipe => {
+    const filteredRecipeByIdMap = filteredById.map(recipe => {
         return <Recipe 
             recipe={recipe} 
             key={recipe.id} />

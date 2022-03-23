@@ -86,11 +86,16 @@ const filtered = React.useMemo(() => {
   // addPersonToDatabase logic (will be passed down as prop to Signup component)
 
   const [filteredById,setFilteredById] = useState("");
+  
+
 
   const filteredRecipeById = React.useMemo(() => {
     return recipeList.filter(recipe => {
-      return filteredById.length > 0 ? recipeList.find(recipe => recipe.person_id === user.id) : true;
+      return filteredById.length > 0 ? recipe.find(recipe => recipe.person_id === user.id) : true;
     })
+    //return recipeList.filter(recipe => {
+  //   return filteredRecipe.length > 0 ? recipe.mealType.includes(filteredRecipe) : true;
+  // })
    }, [filteredById, recipeList]);
 
 

@@ -12,6 +12,7 @@ body {
   background: -moz-linear-gradient(110deg, #fbfbfb 40%, rgba(0, 0, 0, 0) 30%), -moz-radial-gradient(farthest-corner at 0% 0%, #b1d056 70%, #e0ff59 70%);
   background: linear-gradient(110deg, #fbfbfb 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #b1d056 70%, #e0ff59 70%);
   margin-bottom: 100px;
+  
 }
 
 code {

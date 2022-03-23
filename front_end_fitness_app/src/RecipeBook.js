@@ -34,7 +34,7 @@ const RecipeBook = ({recipeList, onRecipeFilter, filtered}) => {
     ];
 
     return(
-        <>
+        <div className="recipeContext">
             <h1>All Recipes</h1>
             <Select 
                 options={mealTypeOptions}
@@ -42,7 +42,7 @@ const RecipeBook = ({recipeList, onRecipeFilter, filtered}) => {
             {filteredMap}
             
             
-        </>
+        </div>
     )
 }
 

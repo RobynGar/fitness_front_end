@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../UserContext";
 
 const RecipeForm = ({onRecipeSubmission}) => {
+
+    const {user} = useContext(UserContext);
 
     const [name, setName] = useState("");
     const [mealType, setMealType] = useState("");
@@ -15,6 +18,7 @@ const RecipeForm = ({onRecipeSubmission}) => {
 
     const handleMealTypeChange = (event) => {
         setMealType(event.target.value);
+        mealType.toUpperCase()
     }
     
     const handleNotesChange = (event) => {
@@ -31,6 +35,7 @@ const RecipeForm = ({onRecipeSubmission}) => {
 
     const handleDayChange = (event) => {
         setDay(event.target.value);
+        day.toUpperCase();
     }
 
     const handleRecipeFormSubmit = (event) => {
@@ -40,6 +45,8 @@ const RecipeForm = ({onRecipeSubmission}) => {
             return;
         }
         const newRecipe = {
+
+            person_id: user.id,
             name: name,
             mealType: mealType,
             notes: notes,

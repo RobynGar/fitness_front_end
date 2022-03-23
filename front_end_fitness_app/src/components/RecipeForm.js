@@ -65,19 +65,20 @@ const RecipeForm = ({onRecipeSubmission}) => {
             <form onSubmit={handleRecipeFormSubmit}>
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" value={name} onChange={handleNameChange}></input>
+                <hr/>
 
                 <label htmlFor="meal type">Meal Type:</label>
                 <input type="text" id="meal type" value={mealType} onChange={handleMealTypeChange}></input>
-
+                <hr/>
                 <label htmlFor="notes">Notes:</label>
                 <input type="text" id="notes" value={notes} onChange={handleNotesChange}></input>
-
+                <hr/>
                 <label htmlFor="calories">Calories:</label>
                 <input type="number" id="calories" value={calories} onChange={handleCaloriesChange}></input>
-
+                <hr/>
                 <label htmlFor="week">Week:</label>
                 <input type="number" id="week" value={week} onChange={handleWeekChange}></input>
-
+                <hr/>
                 <label htmlFor="day">Day:</label>
                 <input type="text" id="day" value={day} onChange={handleDayChange}></input>
 

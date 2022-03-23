@@ -78,12 +78,12 @@ const MyRecipeBook = ({onRecipeSubmission, recipeList, filteredById}) => {
     }) 
 
     return(
-        <>
+        <div className="recipeContext">
             <h1>My Recipes</h1>
             <h2>Hello, {user.id}</h2>
             {filteredRecipeByIdMap}
             <RecipeForm onRecipeSubmission={onRecipeSubmission}/>
-        </>
+        </div>
     )
 }
 

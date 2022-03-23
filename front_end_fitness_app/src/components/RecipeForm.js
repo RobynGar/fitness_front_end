@@ -82,7 +82,7 @@ const RecipeForm = ({onRecipeSubmission}) => {
                 <label htmlFor="day">Day:</label>
                 <input type="text" id="day" value={day} onChange={handleDayChange}></input>
 
-                <input type="submit" value="Submit Recipe"></input>
+                <input className="submitButton" type="submit" value="Submit Recipe"></input>
             </form>
         </>
     )

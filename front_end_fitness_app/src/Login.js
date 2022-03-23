@@ -5,6 +5,10 @@ const Login = ({peopleList, recipeList}) => {
     
     const { login } = useContext(UserContext);
     const [id, setId] = useState();
+    const handleIdChange = (event) => {
+        setId(event.target.value)
+    }
+
 
     return (
         <>
@@ -13,7 +17,7 @@ const Login = ({peopleList, recipeList}) => {
                 login(id)
             }}>
                 <label htmlFor="id">ID:</label>
-                <input type="number" min={1} max={peopleList.length} required={true} id="id" value={id} />
+                <input onChange={handleIdChange} type="number" min={1} max={peopleList.length} required={true} id="id" value={id} />
             <input type="submit" value="Login"/>
             </form>
         </>

@@ -72,13 +72,19 @@ const filtered = React.useMemo(() => {
       .then(data => setPeopleList(data))
   },[]);
 
+  const { user } = useContext(UserContext);
 
   // fetch person data from "localhost:8080/person/{id}"
+  const [person, setPerson] = useState({});
+  useEffect(() => {
+    fetch(`http://localhost:8080/person/${user.id}`)
+    .then(response => response.json())
+    .then(data => setPerson(data))
+  },[]);
 
 
   // addPersonToDatabase logic (will be passed down as prop to Signup component)
 
-  const { user } = useContext(UserContext);
 
 
   return (

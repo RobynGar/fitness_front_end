@@ -68,7 +68,7 @@ const filtered = React.useMemo(() => {
   
   useEffect(() => {
     console.log(recipeList);
-    const filteredRecipeById = recipeList.filter(recipe => recipe.person_id == user.id)
+    const filteredRecipeById = recipeList.filter(recipe => recipe.person_id === parseInt(user.id))
     setFilteredById(filteredRecipeById)
     console.log(filteredRecipeById);
   },[user,recipeList])

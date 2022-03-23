@@ -61,7 +61,7 @@ h1{
 .navitem a {
   color: var(--dark-green);
   text-decoration: none;
-  
+  align-items: center;
 }
 
 #home-pic {
@@ -129,4 +129,14 @@ form{
   background-color: #ffa33e;
   border: none;
   padding: 5px;
+  font-family: 'Righteous';
+}
+
+#sign-out-button {
+  margin-left: 10px;
+  border-radius: 12px;
+  border: none;
+  padding: 5px;
+  font-family: 'Righteous';
+  align-items: center;
 }

@@ -12,7 +12,7 @@ const AuthNavBar = () => {
                 <li className="navitem"><Link to="/" >Home</Link></li>
                 <li className="navitem"><Link to="/RecipeBook" >Recipe Book</Link></li>
                 <li className="navitem"><Link to="/MyRecipeBook" >My Recipe Book</Link></li>
-                <li className="navitem"><button onClick={logout}>Sign out</button></li>
+                <li className="navitem"><button onClick={logout} id="sign-out-button">Sign out</button></li>
             </ul>
         </>
     )

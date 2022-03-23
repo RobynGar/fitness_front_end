@@ -18,6 +18,11 @@ const Home = () => {
                 </div>
                 <img id="home-pic" src={bowlHomePic} />
             </div>
+            <section>
+                <div>
+                    <h3 id="inspiration">Stories</h3>
+                </div>
+            </section>
         </>
     )
 }

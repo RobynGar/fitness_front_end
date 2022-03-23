@@ -12,7 +12,7 @@ import {useState, useEffect, useMemo, useRef, useContext} from 'react';
 import Recipe from './components/Recipe';
 import Person from './components/Person';
 import {UserContext} from './UserContext';
-import AuthNavBar from './components/UnauthNavBar';
+import AuthNavBar from './components/AuthNavBar';
 
 
 function App() {
@@ -88,7 +88,7 @@ const filtered = React.useMemo(() => {
     <Routes>
       <Route exact path= "/" element={<Home />} />
       <Route exact path= "/RecipeBook" element={<RecipeBook recipeList = {recipeList} onRecipeFilter={filterChange} filtered={filtered}/>} />
-      <Route exact path= "/MyRecipeBook" element={<MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} />} />
+      <Route exact path= "/MyRecipeBook" element={user.auth ? <MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} /> : <Home />} />
       <Route exact path= "/Login" element={!user.auth ? <Login peopleList={peopleList} recipeList={recipeList} /> : <Navigate replace to="/MyRecipeBook"/>} />
       <Route exact path= "/SignUp" element={<SignUp />} />
     </Routes>

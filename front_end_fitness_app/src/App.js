@@ -25,19 +25,20 @@ function App() {
     fetch("http://localhost:8080/food/all")
      .then(response => response.json())
      .then(data => setRecipeList(data))
-  },[recipeList])
+  },[recipeList]) 
 
   // handleFoodFormSubmit 
-  const addRecipeToDatabase = async (newRecipe) => {
-     await fetch("http://localhost:8080/food", {
+  const addRecipeToDatabase = (newRecipe) => {
+    fetch("http://localhost:8080/food", {
        method:"POST",
        headers:{
          "Content-Type": "application/json"
        },
-       body:JSON.stringify(newRecipe)
+       body: JSON.stringify(newRecipe)
      })
      .then(response => response.json())
      .then(data => setRecipeList([...recipeList, data]))
+     .catch(error => console.error(error))
 
   }
  const [filteredRecipe, setFilteredRecipe] = useState("");
@@ -67,10 +68,8 @@ const filtered = React.useMemo(() => {
   const [filteredById,setFilteredById] = useState([]);
   
   useEffect(() => {
-    console.log(recipeList);
     const filteredRecipeById = recipeList.filter(recipe => recipe.person_id === parseInt(user.id))
     setFilteredById(filteredRecipeById)
-    console.log(filteredRecipeById);
   },[user,recipeList])
 
 

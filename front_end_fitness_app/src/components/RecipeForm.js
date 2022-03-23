@@ -45,14 +45,13 @@ const RecipeForm = ({onRecipeSubmission}) => {
             return;
         }
         const newRecipe = {
-
             person_id: user.id,
             name: name,
             mealType: mealType,
             notes: notes,
             calories: calories,
             week: week,
-            day: day,
+            day: day
         }
 
         onRecipeSubmission(newRecipe);

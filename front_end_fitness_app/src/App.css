@@ -62,20 +62,30 @@ h1{
   color: var(--dark-green);
   text-decoration: none;
   align-items: center;
+  text-shadow: -0.5px 0 black, 0  0.5px black, 0.5px 0 black, 0 -0.5px black;
 }
 
-#home-pic {
+.home-pic {
   /* margin-right: 0;
   margin-left: auto;
   display: block; */
   /* float: right;
   margin: 10px; */
-  width: 50%;
+  width: 40%;
   height: 400px;
 }
 
+.grow { 
+  transition: all .8s ease-in-out; 
+  }
+  
+  .grow:hover { 
+  transform: scale(1.1); 
+  }
+
 #home-para {
-  width: 50%
+  width: 50%;
+  font-family:Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
 #container {
@@ -141,7 +151,10 @@ form{
   align-items: center;
 }
 #inspiration{
-  margin-bottom: 300px;
+  display: flex;
+  justify-content: center;
+  background-color: red;
+  height: 400px;
 }
 /* #root{
   background: -webkit-linear-gradient(110deg, #fbfbfb 40%, rgba(0, 0, 0, 0) 30%), -webkit-radial-gradient(farthest-corner at 0% 0%, #b1d056 70%,  #e0ff59 70%);

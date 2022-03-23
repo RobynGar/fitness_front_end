@@ -3,7 +3,7 @@ import { UserContext } from './UserContext';
 
 const Login = ({peopleList, recipeList}) => {
     
-    const { login } = useContext(UserContext);
+    const {user,login} = useContext(UserContext);
     const [id, setId] = useState();
     const handleIdChange = (event) => {
         setId(event.target.value)
@@ -14,6 +14,7 @@ const Login = ({peopleList, recipeList}) => {
         <>
             <h1>Login Page</h1>
             <form onSubmit={() => {
+                console.log(user.id);
                 login(id)
             }}>
                 <label htmlFor="id">ID:</label>

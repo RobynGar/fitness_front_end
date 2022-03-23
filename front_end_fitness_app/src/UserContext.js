@@ -1,8 +1,10 @@
+import { createContext, useState } from "react";
+
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
     // User is the name of the "data" that gets stored in context
-    const [user, setUser] = useState({ id: '', auth: true });
+    const [user, setUser] = useState({ id: '', auth: false });
   
     // Login updates the user data with a name parameter
     const login = (id) => {
@@ -27,4 +29,4 @@ const UserProvider = ({ children }) => {
     );
   }
 
-  export default UserContext;
+  export { UserContext, UserProvider }

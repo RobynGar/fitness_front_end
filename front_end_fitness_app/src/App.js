@@ -8,12 +8,13 @@ import SignUp from './SignUp';
 import {Route, Link, Routes} from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import {useState, useEffect, useMemo, useRef} from 'react';
+import {useState, useEffect, useMemo, useRef, useContext} from 'react';
 import Recipe from './components/Recipe';
-import auth from './Route';
+import Person from './components/Person';
+import {UserContext} from './UserContext';
 
 
-function App(props) {
+function App() {
 
   // --------------------RECIPE SECTION------------------------
   const [recipeList, setRecipeList] = useState([]);
@@ -62,9 +63,6 @@ const filtered = React.useMemo(() => {
   // pass person object as prop down to MyRecipeBook to load this person's Recipes
 
 
-  const { user } = useContext(UserContext);
-
-
 
   const [peopleList, setPeopleList] = useState([]);
   useEffect(() => {
@@ -79,7 +77,7 @@ const filtered = React.useMemo(() => {
 
   // addPersonToDatabase logic (will be passed down as prop to Signup component)
 
-
+  const { user } = useContext(UserContext);
 
 
   return (
@@ -90,10 +88,10 @@ const filtered = React.useMemo(() => {
       <Route exact path= "/" element={<Home />} />
       <Route exact path= "/RecipeBook" element={<RecipeBook recipeList = {recipeList} onRecipeFilter={filterChange} filtered={filtered}/>} />
       <Route exact path= "/MyRecipeBook" element={<MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} />} />
-      <Route exact path= "/Login" element={<Login peopleList={peopleList} recipeList={recipeList} onLogin={getPersonById} getId={getId} handleUsername={handlePersonLoginSubmit}/>} />
+      <Route exact path= "/Login" element={!user.auth ? <Login peopleList={peopleList} recipeList={recipeList} /> : <Person />} />
       <Route exact path= "/SignUp" element={<SignUp />} />
     </Routes>
-    user.auth ? <Person /> : <Login />;
+    {/* {user.auth ? <Person /> : <Login />}; */}
     <Footer />
     </>
   );

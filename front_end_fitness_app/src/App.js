@@ -25,11 +25,11 @@ function App() {
     fetch("http://localhost:8080/food/all")
      .then(response => response.json())
      .then(data => setRecipeList(data))
-  },[])
+  },[recipeList])
 
   // handleFoodFormSubmit 
-  const addRecipeToDatabase = (newRecipe) => {
-     fetch("http://localhost:8080/food", {
+  const addRecipeToDatabase = async (newRecipe) => {
+     await fetch("http://localhost:8080/food", {
        method:"POST",
        headers:{
          "Content-Type": "application/json"

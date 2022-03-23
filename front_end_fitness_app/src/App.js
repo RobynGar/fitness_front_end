@@ -85,6 +85,13 @@ const filtered = React.useMemo(() => {
 
   // addPersonToDatabase logic (will be passed down as prop to Signup component)
 
+  const [filteredById,setFilteredById] = useState("");
+
+  const filteredRecipeById = React.useMemo(() => {
+    return recipeList.filter(recipe => {
+      return filteredById.length > 0 ? recipeList.find(recipe => recipe.person_id === user.id) : true;
+    })
+   }, [filteredById, recipeList]);
 
 
   return (
@@ -94,7 +101,7 @@ const filtered = React.useMemo(() => {
     <Routes>
       <Route exact path= "/" element={<Home />} />
       <Route exact path= "/RecipeBook" element={<RecipeBook recipeList = {recipeList} onRecipeFilter={filterChange} filtered={filtered}/>} />
-      <Route exact path= "/MyRecipeBook" element={user.auth ? <MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} /> : <Home />} />
+      <Route exact path= "/MyRecipeBook" element={user.auth ? <MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} filteredRecipeById={filteredRecipeById}/> : <Home />} />
       <Route exact path= "/Login" element={!user.auth ? <Login peopleList={peopleList} recipeList={recipeList} /> : <Navigate replace to="/MyRecipeBook"/>} />
       <Route exact path= "/SignUp" element={<SignUp />} />
     </Routes>

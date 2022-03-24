@@ -178,6 +178,7 @@ form{
 .form{
   align-items: flex-start;
   margin:auto;
+  margin-left: 5%;
 }
 
 label{
@@ -229,4 +230,7 @@ float: left;
 }
 .recipeForm{
   margin: 10%;
+}
+.myRecipe{
+  margin: 50%;
 }

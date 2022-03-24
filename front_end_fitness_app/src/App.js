@@ -57,14 +57,14 @@ function App() {
   }
 
   // allowing users to update their recipes
-  const updateRecipeInDatabase = (id,updatedRecipe) => {
+  const updateRecipeInDatabase = (id, updatedRecipe) => {
     fetch(`http://localhost:8080/food/${id}`, {
       method: 'PUT',
       headers:{
-        'Accept':'applications/json',
+        // 'Accept':'applications/json',
         'Content-Type':'applications/json'
       },
-      body:JSON.stringify(updatedRecipe)
+      body: JSON.stringify(updatedRecipe)
     })
     .then(() => fetchAllRecipes())
     .catch(error => console.error(error))
@@ -104,7 +104,7 @@ const filtered = React.useMemo(() => {
     <Routes>
       <Route exact path= "/" element={<Home />} />
       <Route exact path= "/RecipeBook" element={<RecipeBook recipeList = {recipeList} onRecipeFilter={filterChange} filtered={filtered}/>} />
-      <Route exact path= "/MyRecipeBook" element={user.auth ? <MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} filteredById={filteredById} deleteRecipeFromDatabase={deleteRecipeFromDatabase}/> : <Home />} />
+      <Route exact path= "/MyRecipeBook" element={user.auth ? <MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} filteredById={filteredById} deleteRecipeFromDatabase={deleteRecipeFromDatabase} updatedRecipe={updateRecipeInDatabase}/> : <Home />} />
       <Route exact path= "/Login" element={!user.auth ? <Login peopleList={peopleList} recipeList={recipeList} /> : <Navigate replace to="/MyRecipeBook"/>} />
       <Route exact path= "/SignUp" element={<SignUp />} />
     </Routes>

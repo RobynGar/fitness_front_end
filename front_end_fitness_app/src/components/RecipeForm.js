@@ -18,8 +18,8 @@ const RecipeForm = ({onRecipeSubmission}) => {
     }
 
     const handleMealTypeChange = (event) => {
-        setMealType(event.target.value);
-        mealType.toUpperCase()
+        setMealType(event.target.value.toUpperCase());
+       
     }
     
     const handleNotesChange = (event) => {
@@ -35,8 +35,8 @@ const RecipeForm = ({onRecipeSubmission}) => {
     }
 
     const handleDayChange = (event) => {
-        setDay(event.target.value);
-        day.toUpperCase();
+        setDay(event.target.value.toUpperCase());
+        
     }
 
     const handleRecipeFormSubmit = (event) => {

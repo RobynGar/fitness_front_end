@@ -1,61 +1,79 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../UserContext";
 
-const EditableRecipeDisplay = ({editStatusSwitch}) => {
 
-    const [name, setName] = useState("");
-    const [mealType, setMealType] = useState("");
-    const [notes, setNotes] = useState("");
-    const [calories, setCalories] = useState(0);
-    const [week, setWeek] = useState(0);
-    const [day, setDay] = useState("");
+const EditableRecipeDisplay = ({editStatusSwitch, recipe, updatedRecipe}) => {
+    const {user} = useContext(UserContext);
+    const [updatedName, setUpdatedName] = useState(recipe.name);
+    const [updatedMealType, setUpdatedMealType] = useState(recipe.mealType);
+    const [updatedNotes, setUpdatedNotes] = useState(recipe.notes);
+    const [updatedCalories, setUpdatedCalories] = useState(recipe.calories);
+    const [updatedWeek, setUpdatedWeek] = useState(recipe.week);
+    const [updatedDay, setUpdatedDay] = useState(recipe.day);
 
     const handleNameChange = (event) => {
-        setName(event.target.value);
+        setUpdatedName(event.target.value);
     }
 
     const handleMealTypeChange = (event) => {
-        setMealType(event.target.value);
-        mealType.toUpperCase()
+        setUpdatedMealType(event.target.value.toUpperCase());
+        
     }
     
     const handleNotesChange = (event) => {
-        setNotes(event.target.value);
+        setUpdatedNotes(event.target.value);
     }
 
     const handleCaloriesChange = (event) => {
-        setCalories(event.target.value);
+        setUpdatedCalories(event.target.value);
     }
 
     const handleWeekChange = (event) => {
-        setWeek(event.target.value);
+        setUpdatedWeek(event.target.value);
     }
 
     const handleDayChange = (event) => {
-        setDay(event.target.value);
-        day.toUpperCase();
+        setUpdatedDay(event.target.value.toUpperCase());
+        
+    }
+    const handleUpdatedRecipe= (event) => {
+       //this prevents the page from reloading to the default page on submission of the form
+        event.preventDefault();
+        const theUpdatedRecipe = {
+            person_id: user.id,
+            name: updatedName,
+            mealType: updatedMealType,
+            notes: updatedNotes,
+            calories: updatedCalories,
+            week: updatedWeek,
+            day: updatedDay
+        }
+
+        updatedRecipe(recipe.id, theUpdatedRecipe);
+
     }
 
     return (
         <>
         <button onClick={editStatusSwitch}>Cancel</button>
-        <form>
+        <form onSubmit={handleUpdatedRecipe}>
             <label htmlFor="name">Name:</label>
-            <input type="text" id="name" ></input>
+            <input value={updatedName} placeholder= {updatedName} onChange={handleNameChange} type="text" id="name" ></input>
 
             <label htmlFor="meal type">Meal Type:</label>
-            <input type="text" id="meal type" ></input>
+            <input value={updatedMealType} placeholder= {updatedMealType} onChange={handleMealTypeChange} type="text" id="meal type" ></input>
 
             <label htmlFor="notes">Notes:</label>
-            <input type="text" id="notes" ></input>
+            <input value={updatedNotes} onChange={handleNotesChange} type="text" id="notes" ></input>
 
             <label htmlFor="calories">Calories:</label>
-            <input type="number" id="calories" ></input>
+            <input value={updatedCalories} onChange={handleCaloriesChange} type="number" id="calories" ></input>
 
             <label htmlFor="week">Week:</label>
-            <input type="number" id="week" ></input>
+            <input value={updatedWeek} onChange={handleWeekChange} type="number" id="week" ></input>
 
             <label htmlFor="day">Day:</label>
-            <input type="text" id="day" ></input>
+            <input value={updatedDay} onChange={handleDayChange} type="text" id="day" ></input>
 
             <input type="submit" value="Update Recipe"></input>
         </form>

@@ -137,7 +137,7 @@ h1{
   margin-left: 30px;
 }
 form{
-  margin-left: 30px;
+  margin: auto;
 }
 .submitButton{
   margin-left: 10px;
@@ -169,11 +169,16 @@ form{
   background: linear-gradient(110deg, #fbfbfb 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #b1d056 70%, #e0ff59 70%);
   margin-bottom: 100px;
 } */
-.form{
+.formContainer{
   background-color: var(--orange);
-  width:200px;
-  padding:20px;
+  width:80%;
   border-radius: 12px;
+  display: flex;
+  margin: auto;
+}
+.form{
+  align-items: flex-start;
+    margin:auto;
 }
 #login-button{
   margin-left: 10px;
@@ -183,4 +188,16 @@ form{
   font-family: 'Righteous';
   align-items: center;
   background-color: var(--heading-colour);
+}
+input[type=number] {
+  
+  width: 50%;
+}
+.strawberry{
+  height: auto;
+  width: 50%;
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
+ 
+  
 }

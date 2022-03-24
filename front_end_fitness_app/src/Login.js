@@ -1,5 +1,6 @@
 import React, { useContext, useRef, useState } from 'react';
 import { UserContext } from './UserContext';
+import strawberryHomePic from './assets/strawberryHomePic.png';
 
 const Login = ({peopleList, recipeList}) => {
     
@@ -18,14 +19,17 @@ const Login = ({peopleList, recipeList}) => {
     return (
         <>
             <h1>Login</h1>
-            <form className="form" onSubmit={() => {
+            <div className="formContainer">
+            <form  className="form" onSubmit={() => {
                 // console.log(user.id);
                 login(id)
             }}>
-                <label htmlFor="id">ID:</label>
-                <input onChange={handleIdChange} name="id" type="number" min={1} max={peopleList.length} required={true} ref={idRef} />
+                <label htmlFor="id">UserName:</label>
+                <input onChange={handleIdChange} placeholder="id number" name="id" type="number" min={1} max={peopleList.length} required={true} ref={idRef} />
             <input id="login-button" type="submit" value="Login"/>
             </form>
+            <img className="strawberry" src={strawberryHomePic} />
+            </div>
         </>
     )
 }

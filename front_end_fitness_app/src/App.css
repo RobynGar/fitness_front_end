@@ -178,7 +178,8 @@ label{
   display: inline-block;
   float: left;
   clear: left;
-  width: 250px;
+  width: 156px;
+
   text-align: left;
 }
 input {
@@ -224,7 +225,7 @@ float: left;
 .recipeForm{
   margin: 10%;
 }
-.personFormConatiner{
+.personFormContainer{
   background-color: var(--orange);
   width:80%;
   border-radius: 12px;
@@ -238,6 +239,7 @@ float: left;
 }
 .submitPersonButton{
   margin-left: 10px;
+  margin-top: 10px;
   border-radius: 12px;
   border: none;
   padding: 5px;
@@ -250,4 +252,5 @@ float: left;
   border-bottom-right-radius: 12px;
   border-top-right-radius: 12px;
   align-items: flex-end;
+  display: inline-block;
 }

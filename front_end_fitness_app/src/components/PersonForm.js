@@ -58,7 +58,7 @@ const PersonForm = ({onPersonSubmission}) => {
 
     return(
         <>
-        <div className="personFormConatiner">
+        <div className="personFormContainer">
             <form className="personform" onSubmit={handlePersonFormSubmit}>
                 <label htmlFor="name">Name:</label>
                 <input placeholder="Wendy" type="text" id="name" value={name} onChange={handleNameChange} />

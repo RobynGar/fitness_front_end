@@ -3,6 +3,7 @@ const MyRecipe = ({recipe, deleteRecipeFromDatabase}) => {
         <>
         <h2> {recipe.name} </h2>
         <button onClick={function() {deleteRecipeFromDatabase(recipe.id)}} className="delete-button">Delete</button>
+        <button className="update-button">Update</button>
         <ul>
             <li>{recipe.mealType}</li>
             <li>{recipe.notes}</li>

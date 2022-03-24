@@ -56,6 +56,22 @@ function App() {
     .catch(error => console.error(error))
   }
 
+  // allowing users to update their recipes
+  const updateRecipeInDatabase = (id) => {
+    let recipeToUpdate = recipeList.find (recipe => recipe.id === parseInt(id))
+    fetch(`http://localhost:8080/food/${id}`, {
+      method: 'PUT',
+      headers:{
+        'Accept':'applications/json',
+        'Content-Type':'applications/json'
+      },
+      body:JSON.stringify(recipeToUpdate)
+
+    })
+    .then(() => fetchAllRecipes())
+    .catch(error => console.error(error))
+  }
+
   const filterChange = (event) => {
     setFilteredRecipe(event.value);
     

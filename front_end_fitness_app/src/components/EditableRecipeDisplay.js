@@ -1,14 +1,6 @@
-import FinalRecipeDisplay from "./FinalRecipeDisplay";
-import EditableRecipeDisplay from "./EditableRecipeDisplay";
 import { useState } from "react";
 
-const MyRecipe = ({recipe, deleteRecipeFromDatabase}) => {
-
-    const [editStatus, setEditStatus] = useState(false);
-
-    const editStatusSwitch = () => {
-        editStatus ? setEditStatus(false) : setEditStatus(true);
-    }
+const EditableRecipeDisplay = ({editStatusSwitch}) => {
 
     const [name, setName] = useState("");
     const [mealType, setMealType] = useState("");
@@ -43,15 +35,32 @@ const MyRecipe = ({recipe, deleteRecipeFromDatabase}) => {
         day.toUpperCase();
     }
 
-    
-
     return (
         <>
-        <h2> {recipe.name} </h2>
-        <button onClick={function() {deleteRecipeFromDatabase(recipe.id)}} className="delete-button">Delete</button>
-        {editStatus ? <EditableRecipeDisplay editStatusSwitch={editStatusSwitch}/> : <FinalRecipeDisplay editStatusSwitch={editStatusSwitch} recipe={recipe}/>}
+        <button onClick={editStatusSwitch}>Cancel</button>
+        <form>
+            <label htmlFor="name">Name:</label>
+            <input type="text" id="name" ></input>
+
+            <label htmlFor="meal type">Meal Type:</label>
+            <input type="text" id="meal type" ></input>
+
+            <label htmlFor="notes">Notes:</label>
+            <input type="text" id="notes" ></input>
+
+            <label htmlFor="calories">Calories:</label>
+            <input type="number" id="calories" ></input>
+
+            <label htmlFor="week">Week:</label>
+            <input type="number" id="week" ></input>
+
+            <label htmlFor="day">Day:</label>
+            <input type="text" id="day" ></input>
+
+            <input type="submit" value="Update Recipe"></input>
+        </form>
         </>
     )
 }
 
-export default MyRecipe;
+export default EditableRecipeDisplay;

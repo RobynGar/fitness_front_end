@@ -56,13 +56,6 @@ const RecipeForm = ({onRecipeSubmission}) => {
         }
 
         onRecipeSubmission(newRecipe);
-
-        setName("");
-        setMealType("");
-        setNotes("");
-        setCalories(0);
-        setWeek(0);
-        setDay("");
     }
 
     

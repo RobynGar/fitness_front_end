@@ -224,7 +224,7 @@ float: left;
   margin: auto;
 }
 .recipeForm{
-  margin: 10%;
+  margin: 50%;
 }
 .personFormContainer{
   background-color: var(--orange);
@@ -254,4 +254,40 @@ float: left;
   border-top-right-radius: 12px;
   align-items: flex-end;
   display: inline-block;
+}
+.delete-button{
+  margin-top: 10px;
+  border-radius: 12px;
+  background-color: #ffa33e;
+  border: none;
+  padding: 5px;
+  font-family: 'Righteous'; 
+  margin: 2px;
+}
+.buttons{
+  margin-top: 10px;
+  border-radius: 12px;
+  background-color: #ffa33e;
+  border: none;
+  padding: 5px;
+  font-family: 'Righteous'; 
+  margin: 2px;
+}
+.update-button{
+  margin-top: 10px;
+  border-radius: 12px;
+  background-color: #ffa33e;
+  border: none;
+  padding: 5px;
+  font-family: 'Righteous'; 
+  margin: 2px;
+}
+.cancel_button{
+  margin-top: 10px;
+  border-radius: 12px;
+  background-color: #ffa33e;
+  border: none;
+  padding: 5px;
+  font-family: 'Righteous'; 
+  margin: 2px;
 }

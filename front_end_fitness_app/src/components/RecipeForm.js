@@ -72,7 +72,7 @@ const RecipeForm = ({onRecipeSubmission}) => {
             <div className="recipeFormContainer">
             <form className="recipeForm" onSubmit={handleRecipeFormSubmit}>
                 <label htmlFor="name">Name:</label>
-                <input placeholder="Curry" type="text" id="name" value={name} onChange={handleNameChange}></input>
+                <input placeholder="Muesli" type="text" id="name" value={name} onChange={handleNameChange}></input>
 
                 <label htmlFor="meal type">Meal Type:</label>
                 <input placeholder="BREAKFAST" type="text" id="meal type" value={mealType} onChange={handleMealTypeChange}></input>

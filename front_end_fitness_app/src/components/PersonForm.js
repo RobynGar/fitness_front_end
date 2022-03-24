@@ -1,4 +1,5 @@
 import { useState } from "react";
+import signUp from '../assets/signUp.jpeg';
 
 const PersonForm = ({onPersonSubmission}) => {
 
@@ -39,9 +40,9 @@ const PersonForm = ({onPersonSubmission}) => {
         const newPerson = {
             name: name,
             age: age,
-            height: height,
-            weight: weight,
-            calorieTarget: calorieTarget
+            height_in_cm: height,
+            weight_in_kg: weight,
+            calorie_target: calorieTarget
 
         }
 
@@ -71,12 +72,13 @@ const PersonForm = ({onPersonSubmission}) => {
                 <label htmlFor="weight">Weight (kg):</label>
                 <input placeholder= "166.0" type="number" id="weight" value={weight} onChange={handleWeightChange} />
 
-                <label htmlFor="calorieTarget">calorie Targe (kcal):</label>
+                <label htmlFor="calorieTarget">Calorie Target (kcal):</label>
                 <input placeholder= "1700" type="number" id="calorieTarget" value={calorieTarget} onChange={handleCalorieTargetChange} />
 
                 <input className="submitPersonButton" type="submit" value= "Register" />
 
             </form>
+            <img className="signUp-form-image" src={signUp} />
         </div>
 
         </>

@@ -78,11 +78,11 @@ const filtered = React.useMemo(() => {
     fetch("http://localhost:8080/person", {
     method: "POST",
     headers: {
-      "Content-Type":"application/json"
+      "Content-Type": "application/json"
     },
     body: JSON.stringify(newPerson)
   })
-    .then(() => fetchAllPeople() )
+    .then(() => fetchAllPeople())
     .catch(error => console.error(error))
   }
   

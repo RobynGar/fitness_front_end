@@ -62,7 +62,7 @@ function App() {
       method: 'PUT',
       headers:{
         // 'Accept':'applications/json',
-        'Content-Type':'applications/json'
+        'Content-Type':'application/json'
       },
       body: JSON.stringify(updatedRecipe)
     })

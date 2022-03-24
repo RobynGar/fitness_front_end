@@ -50,6 +50,14 @@ public class SpringGlobalConfig implements WebMvcConfigurer {
 
                 .allowedMethods("POST");
 
+        registry.addMapping("/food/**")
+
+                .allowedOrigins("http://localhost:3000")
+
+                .allowedHeaders("*")
+
+                .allowedMethods("PUT");
+
 
     }
 }

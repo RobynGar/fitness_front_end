@@ -32,7 +32,7 @@ public class SpringGlobalConfig implements WebMvcConfigurer {
 
                 .allowedHeaders("*")
 
-                .allowedMethods("DELETE");
+                .allowedMethods("DELETE", "PUT");
 
         registry.addMapping("/person/all")
 
@@ -49,14 +49,6 @@ public class SpringGlobalConfig implements WebMvcConfigurer {
                 .allowedHeaders("*")
 
                 .allowedMethods("POST");
-
-        registry.addMapping("/food/**")
-
-                .allowedOrigins("http://localhost:3000")
-
-                .allowedHeaders("*")
-
-                .allowedMethods("PUT");
 
 
     }

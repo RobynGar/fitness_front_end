@@ -55,7 +55,7 @@ const EditableRecipeDisplay = ({editStatusSwitch, recipe, updatedRecipe}) => {
 
     return (
         <>
-        <button onClick={editStatusSwitch}>Cancel</button>
+        <button className="cancel_button" onClick={editStatusSwitch}>Cancel</button>
         <form onSubmit={handleUpdatedRecipe}>
             <label htmlFor="name">Name:</label>
             <input value={updatedName} placeholder= {updatedName} onChange={handleNameChange} type="text" id="name" ></input>
@@ -75,7 +75,7 @@ const EditableRecipeDisplay = ({editStatusSwitch, recipe, updatedRecipe}) => {
             <label htmlFor="day">Day:</label>
             <input value={updatedDay} onChange={handleDayChange} type="text" id="day" ></input>
 
-            <input type="submit" value="Update Recipe"></input>
+            <input className="buttons" type="submit" value="Update Recipe"></input>
         </form>
         </>
     )

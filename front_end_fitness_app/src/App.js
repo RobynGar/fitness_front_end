@@ -19,17 +19,17 @@ function App() {
 
   // --------------------RECIPE SECTION------------------------
   const [recipeList, setRecipeList] = useState([]);
-  const [filteredById,setFilteredById] = useState([]);
   const [filteredRecipe, setFilteredRecipe] = useState("");
   const [peopleList, setPeopleList] = useState([]);
   const { user } = useContext(UserContext);
+  const [filteredById,setFilteredById] = useState([]);
 
   // fetch food data from "localhost:8080/food/all"
   useEffect(() => {
     fetch("http://localhost:8080/food/all")
-    .then(response => response.json())
-    .then(data => setRecipeList(data))
-  },[])
+     .then(response => response.json())
+     .then(data => setRecipeList(data))
+  },[]) 
 
   // handleFoodFormSubmit 
   const addRecipeToDatabase = (newRecipe) => {
@@ -43,27 +43,26 @@ function App() {
      .then(response => response.json())
      .then(data => setRecipeList([...recipeList, data]))
      .catch(error => console.error(error))
+
   }
 
-  // // Allow users to delete a specific recipe
-  // const deleteRecipeFromDatabase = (id) => {
-  //   fetch(`http://localhost:8080/food/${id}`, {
-  //      method:"DELETE"
-  //    })
-  //    .then(response => response.json())
-  //    .then(resp => console.warn(resp))
-  //    .catch(error => console.error(error))
+  // Allow users to delete a food entry from the MyRecipes page
+  // const deleteRecipeFromDatabase = () => {
+  //   fetch(`http://localhost:8080/food/${user.id}`, {
+  //     method: 'DELETE'
+  //   })
+  //   .then(response => response.json())
   // }
 
   const filterChange = (event) => {
     setFilteredRecipe(event.value);
   }
-  
-  const filtered = React.useMemo(() => {
-    return recipeList.filter(recipe => {
-      return filteredRecipe.length > 0 ? recipe.mealType.includes(filteredRecipe) : true;
-    })
-  }, [filteredRecipe, recipeList]);
+
+const filtered = React.useMemo(() => {
+  return recipeList.filter(recipe => {
+    return filteredRecipe.length > 0 ? recipe.mealType.includes(filteredRecipe) : true;
+  })
+ }, [filteredRecipe, recipeList]);
 
   // --------------------PEOPLE SECTION------------------------
   useEffect(() => {
@@ -75,10 +74,8 @@ function App() {
   // addPersonToDatabase logic (will be passed down as prop to Signup component)
   
   useEffect(() => {
-    console.log(recipeList);
     const filteredRecipeById = recipeList.filter(recipe => recipe.person_id === parseInt(user.id))
     setFilteredById(filteredRecipeById)
-    console.log(filteredById);
   },[user,recipeList])
 
 
@@ -89,7 +86,7 @@ function App() {
     <Routes>
       <Route exact path= "/" element={<Home />} />
       <Route exact path= "/RecipeBook" element={<RecipeBook recipeList = {recipeList} onRecipeFilter={filterChange} filtered={filtered}/>} />
-      <Route exact path= "/MyRecipeBook" element={user.auth ? <MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} filteredById={filteredById} /> : <Home />} />
+      <Route exact path= "/MyRecipeBook" element={user.auth ? <MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} filteredById={filteredById}/> : <Home />} />
       <Route exact path= "/Login" element={!user.auth ? <Login peopleList={peopleList} recipeList={recipeList} /> : <Navigate replace to="/MyRecipeBook"/>} />
       <Route exact path= "/SignUp" element={<SignUp />} />
     </Routes>

@@ -24,12 +24,14 @@ function App() {
   const { user } = useContext(UserContext);
   const [filteredById,setFilteredById] = useState([]);
 
-  // fetch food data from "localhost:8080/food/all"
-  useEffect(() => {
+  const fetchAllRecipes = () => {
     fetch("http://localhost:8080/food/all")
      .then(response => response.json())
      .then(data => setRecipeList(data))
-  },[]) 
+  }
+
+  // passing fetchAllRecipes function
+  useEffect(fetchAllRecipes, [])
 
   // handleFoodFormSubmit 
   const addRecipeToDatabase = (newRecipe) => {
@@ -40,8 +42,7 @@ function App() {
        },
        body: JSON.stringify(newRecipe)
      })
-     .then(response => response.json())
-     .then(data => setRecipeList([...recipeList, data]))
+     .then(() => fetchAllRecipes())
      .catch(error => console.error(error))
 
   }
@@ -74,6 +75,7 @@ const filtered = React.useMemo(() => {
   // addPersonToDatabase logic (will be passed down as prop to Signup component)
   
   useEffect(() => {
+    console.log(recipeList);
     const filteredRecipeById = recipeList.filter(recipe => recipe.person_id === parseInt(user.id))
     setFilteredById(filteredRecipeById)
   },[user,recipeList])

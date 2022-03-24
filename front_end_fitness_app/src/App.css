@@ -156,9 +156,20 @@ h1{
   align-items: center;
 }
 #inspiration{
-  display: flex;
-  justify-content: center;
   height: 400px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.inspiration-container {
+  margin: auto;
+  height: 100%;
+  background-color: rgba(255,255,255,0.5);
+  width: fit-content;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 12px;
 }
 
 .formContainer{
@@ -305,4 +316,46 @@ float: left;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+}
+
+a {
+  display: none;
+  text-decoration: none;
+  /* display: inline-block; */
+  padding: 8px 16px;
+  height: 6%;
+  cursor: pointer;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.story-text {
+  font-family:Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+/* .stories-item {
+  margin: auto;
+} */
+
+.stories-img {
+  width: 100%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }

@@ -17,14 +17,14 @@ const Login = ({peopleList, recipeList}) => {
 
     return (
         <>
-            <h1>Login Page</h1>
-            <form onSubmit={() => {
+            <h1>Login</h1>
+            <form className="form" onSubmit={() => {
                 // console.log(user.id);
                 login(id)
             }}>
                 <label htmlFor="id">ID:</label>
                 <input onChange={handleIdChange} name="id" type="number" min={1} max={peopleList.length} required={true} ref={idRef} />
-            <input type="submit" value="Login"/>
+            <input id="login-button" type="submit" value="Login"/>
             </form>
         </>
     )

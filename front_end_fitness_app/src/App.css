@@ -169,3 +169,18 @@ form{
   background: linear-gradient(110deg, #fbfbfb 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #b1d056 70%, #e0ff59 70%);
   margin-bottom: 100px;
 } */
+.form{
+  background-color: var(--orange);
+  width:200px;
+  padding:20px;
+  border-radius: 12px;
+}
+#login-button{
+  margin-left: 10px;
+  border-radius: 12px;
+  border: none;
+  padding: 5px;
+  font-family: 'Righteous';
+  align-items: center;
+  background-color: var(--heading-colour);
+}

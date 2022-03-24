@@ -3,13 +3,14 @@ import { UserContext } from "./UserContext";
 import { useContext,useState } from "react";
 import MyRecipe from "./components/MyRecipe";
 
-const MyRecipeBook = ({onRecipeSubmission, recipeList, filteredById}) => {
+const MyRecipeBook = ({onRecipeSubmission, recipeList, filteredById, deleteRecipeFromDatabase}) => {
     const {user} = useContext(UserContext);
 
     const filteredRecipeByIdMap = filteredById.map(recipe => {
         return <MyRecipe 
             recipe={recipe} 
-            key={recipe.id} />
+            key={recipe.id}
+            deleteRecipeFromDatabase={deleteRecipeFromDatabase} />
     }) 
 
     return(

@@ -201,3 +201,18 @@ input[type=number] {
  
   
 }
+.recipe-form-image{
+  width: 50%;
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.recipeFormContainer{
+  background-color: #fbfbfb;
+  width:80%;
+  border-radius: 12px;
+  display: flex;
+  margin: auto;
+}
+.recipeForm{
+  margin: 10%;
+}

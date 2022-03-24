@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../UserContext";
+import granola from '../assets/granola.jpeg';
 
 const RecipeForm = ({onRecipeSubmission}) => {
 
@@ -68,7 +69,8 @@ const RecipeForm = ({onRecipeSubmission}) => {
 
     return (
         <>
-            <form onSubmit={handleRecipeFormSubmit}>
+            <div className="recipeFormContainer">
+            <form className="recipeForm" onSubmit={handleRecipeFormSubmit}>
                 <label htmlFor="name">Name:</label>
                 <input placeholder="Curry" type="text" id="name" value={name} onChange={handleNameChange}></input>
                 <hr/>
@@ -90,6 +92,9 @@ const RecipeForm = ({onRecipeSubmission}) => {
 
                 <input className="submitButton" type="submit" value="Submit Recipe"></input>
             </form>
+            <img className="recipe-form-image" src={granola} />
+            </div>
+
         </>
     )
 }

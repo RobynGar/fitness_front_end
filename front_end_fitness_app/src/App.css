@@ -319,9 +319,8 @@ float: left;
 }
 
 a {
-  display: none;
   text-decoration: none;
-  /* display: inline-block; */
+  display: inline-block;
   padding: 8px 16px;
   height: 6%;
   cursor: pointer;
@@ -335,11 +334,13 @@ a:hover {
 .previous {
   background-color: #f1f1f1;
   color: black;
+  display: none;
 }
 
 .next {
   background-color: #04AA6D;
   color: white;
+  display: none;
 }
 
 .round {

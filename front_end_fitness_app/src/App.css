@@ -136,7 +136,7 @@ h1{
 .recipeContext{
   margin-left: 30px;
 }
-form{
+.form-login {
   margin: auto;
 }
 .submitButton{
@@ -238,6 +238,7 @@ float: left;
 .personform{
   margin: 10%;
 }
+
 .submitPersonButton{
   margin-left: 10px;
   margin-top: 10px;
@@ -248,12 +249,18 @@ float: left;
   align-items: center;
   background-color: var(--heading-colour);
 }
+
 .signUp-form-image{
-  width: 50%;
+  /* width: 50%;
+  height: 30%; */
   border-bottom-right-radius: 12px;
   border-top-right-radius: 12px;
-  align-items: flex-end;
-  display: inline-block;
+  /* align-items: flex-end; */
+  /* display: inline-block; */
+  max-width: 100%;
+  max-height: 100%;
+  text-align: right;
+
 }
 .delete-button{
   margin-top: 10px;
@@ -263,6 +270,7 @@ float: left;
   padding: 5px;
   font-family: 'Righteous'; 
   margin: 2px;
+  width: 5%;
 }
 .buttons{
   margin-top: 10px;
@@ -281,6 +289,7 @@ float: left;
   padding: 5px;
   font-family: 'Righteous'; 
   margin: 2px;
+  width: 5%;
 }
 .cancel_button{
   margin-top: 10px;
@@ -290,4 +299,11 @@ float: left;
   padding: 5px;
   font-family: 'Righteous'; 
   margin: 2px;
+  width: 5%;
+}
+
+.myRecipe {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }

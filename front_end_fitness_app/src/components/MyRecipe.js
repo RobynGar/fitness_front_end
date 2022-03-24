@@ -2,6 +2,7 @@ const MyRecipe = ({recipe}) => {
     return (
         <>
         <h2> {recipe.name} </h2>
+        <button className="delete-button">Delete</button>
         <ul>
             <li>{recipe.mealType}</li>
             <li>{recipe.notes}</li>

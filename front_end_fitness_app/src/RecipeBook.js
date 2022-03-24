@@ -20,8 +20,8 @@ const RecipeBook = ({recipeList, onRecipeFilter, filtered}) => {
 // filters but need to incorporate the unique name and notes
     const filteredMap = filtered.map(recipe => {
         return <Recipe 
-        recipe={recipe} 
-        key={recipe.id} />
+                    recipe={recipe} 
+                    key={recipe.id} />
     }) 
 
     // the different options within our dropdown filter
@@ -37,6 +37,7 @@ const RecipeBook = ({recipeList, onRecipeFilter, filtered}) => {
         <div className="recipeContext">
             <h1>All Recipes</h1>
             <Select 
+                className="filter-bar"
                 options={mealTypeOptions}
                 onChange={onRecipeFilter} /> 
             {filteredMap}

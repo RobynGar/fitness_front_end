@@ -66,13 +66,25 @@ const filtered = React.useMemo(() => {
  }, [filteredRecipe, recipeList]);
 
   // --------------------PEOPLE SECTION------------------------
-  useEffect(() => {
-      fetch("http://localhost:8080/person/all")
-      .then(response => response.json())
-      .then(data => setPeopleList(data))
-  },[]);
+  const fetchAllPeople = () => {
+    fetch("http://localhost:8080/person/all")
+    .then(response => response.json())
+    .then(data => setPeopleList(data))
+  }
+  useEffect(fetchAllPeople,[]);
 
   // addPersonToDatabase logic (will be passed down as prop to Signup component)
+  const addPersonToDatabase = (newPerson) => {
+    fetch("http://localhost:8080/person", {
+    method: "POST",
+    headers: {
+      "Content-Type":"application/json"
+    },
+    body: JSON.stringify(newPerson)
+  })
+    .then(() => fetchAllPeople() )
+    .catch(error => console.error(error))
+  }
   
   useEffect(() => {
     console.log(recipeList);
@@ -90,7 +102,7 @@ const filtered = React.useMemo(() => {
       <Route exact path= "/RecipeBook" element={<RecipeBook recipeList = {recipeList} onRecipeFilter={filterChange} filtered={filtered}/>} />
       <Route exact path= "/MyRecipeBook" element={user.auth ? <MyRecipeBook recipeList = {recipeList} onRecipeSubmission = {addRecipeToDatabase} filteredById={filteredById}/> : <Home />} />
       <Route exact path= "/Login" element={!user.auth ? <Login peopleList={peopleList} recipeList={recipeList} /> : <Navigate replace to="/MyRecipeBook"/>} />
-      <Route exact path= "/SignUp" element={<SignUp />} />
+      <Route exact path= "/SignUp" element={<SignUp onPersonSubmission={addPersonToDatabase} />} />
     </Routes>
     <Footer />
     </>

@@ -140,7 +140,7 @@ form{
   margin: auto;
 }
 .submitButton{
-  margin-left: 10px;
+  margin-top: 10px;
   border-radius: 12px;
   background-color: #ffa33e;
   border: none;
@@ -159,7 +159,6 @@ form{
 #inspiration{
   display: flex;
   justify-content: center;
-  background-color: red;
   height: 400px;
 }
 /* #root{
@@ -178,8 +177,21 @@ form{
 }
 .form{
   align-items: flex-start;
-    margin:auto;
+  margin:auto;
 }
+
+label{
+  display: inline-block;
+  float: left;
+  clear: left;
+  width: 250px;
+  text-align: left;
+}
+input {
+display: inline-block;
+float: left;
+}
+
 #login-button{
   margin-left: 10px;
   border-radius: 12px;
@@ -189,7 +201,7 @@ form{
   align-items: center;
   background-color: var(--heading-colour);
 }
-input[type=number] {
+.login-field {
   
   width: 50%;
 }
@@ -205,6 +217,8 @@ input[type=number] {
   width: 50%;
   border-bottom-right-radius: 12px;
   border-top-right-radius: 12px;
+  align-items: flex-end;
+
 }
 .recipeFormContainer{
   background-color: #fbfbfb;

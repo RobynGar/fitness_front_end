@@ -25,7 +25,7 @@ const Login = ({peopleList, recipeList}) => {
                 login(id)
             }}>
                 <label htmlFor="id">UserName:</label>
-                <input onChange={handleIdChange} placeholder="id number" name="id" type="number" min={1} max={peopleList.length} required={true} ref={idRef} />
+                <input className="login-field" onChange={handleIdChange} placeholder="id number" name="id" type="number" min={1} max={peopleList.length} required={true} ref={idRef} />
             <input id="login-button" type="submit" value="Login"/>
             </form>
             <img className="strawberry" src={strawberryHomePic} />

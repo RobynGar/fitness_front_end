@@ -1,16 +1,21 @@
-const MyRecipe = ({recipe}) => {
+import FinalRecipeDisplay from "./FinalRecipeDisplay";
+import EditableRecipeDisplay from "./EditableRecipeDisplay";
+import { useState } from "react";
+
+const MyRecipe = ({recipe, deleteRecipeFromDatabase, updatedRecipe}) => {
+
+    const [editStatus, setEditStatus] = useState(false);
+
+    const editStatusSwitch = () => {
+        editStatus ? setEditStatus(false) : setEditStatus(true);
+    }
+
     return (
-        <>
+        <div className="myRecipe">
         <h2> {recipe.name} </h2>
-        <button className="delete-button">Delete</button>
-        <ul>
-            <li>{recipe.mealType}</li>
-            <li>{recipe.notes}</li>
-            <li>Calories: {recipe.calories}</li>
-            <li>Week: {recipe.week}</li>
-            <li>Day: {recipe.day}</li>
-        </ul>
-        </>
+        <button onClick={function() {deleteRecipeFromDatabase(recipe.id)}} className="delete-button">Delete</button>
+        {editStatus ? <EditableRecipeDisplay recipe={recipe} editStatusSwitch={editStatusSwitch} updatedRecipe={updatedRecipe}/> : <FinalRecipeDisplay editStatusSwitch={editStatusSwitch} recipe={recipe}/>}
+        </div>
     )
 }
 

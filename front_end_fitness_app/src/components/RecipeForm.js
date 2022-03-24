@@ -18,8 +18,8 @@ const RecipeForm = ({onRecipeSubmission}) => {
     }
 
     const handleMealTypeChange = (event) => {
-        setMealType(event.target.value);
-        mealType.toUpperCase()
+        setMealType(event.target.value.toUpperCase());
+       
     }
     
     const handleNotesChange = (event) => {
@@ -35,8 +35,8 @@ const RecipeForm = ({onRecipeSubmission}) => {
     }
 
     const handleDayChange = (event) => {
-        setDay(event.target.value);
-        day.toUpperCase();
+        setDay(event.target.value.toUpperCase());
+        
     }
 
     const handleRecipeFormSubmit = (event) => {
@@ -56,13 +56,6 @@ const RecipeForm = ({onRecipeSubmission}) => {
         }
 
         onRecipeSubmission(newRecipe);
-
-        setName("");
-        setMealType("");
-        setNotes("");
-        setCalories(0);
-        setWeek(0);
-        setDay("");
     }
 
     
@@ -72,7 +65,7 @@ const RecipeForm = ({onRecipeSubmission}) => {
             <div className="recipeFormContainer">
             <form className="recipeForm" onSubmit={handleRecipeFormSubmit}>
                 <label htmlFor="name">Name:</label>
-                <input placeholder="Muesli" type="text" id="name" value={name} onChange={handleNameChange}></input>
+                <input placeholder="Muesli" type="text" id="name" value={name} onChange={handleNameChange} ></input>
 
                 <label htmlFor="meal type">Meal Type:</label>
                 <input placeholder="BREAKFAST" type="text" id="meal type" value={mealType} onChange={handleMealTypeChange}></input>

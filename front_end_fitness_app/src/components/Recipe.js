@@ -6,7 +6,7 @@
 const Recipe = ({recipe}) => {
     return(
         <> 
-        <div className='individual-recipe-container'>
+        <div className='individual-recipe-container grow'>
             {/* extracting name component from recipe prop */}
             <h2> {recipe.name} </h2>
             {/* <ul>

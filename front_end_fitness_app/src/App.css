@@ -229,9 +229,17 @@ float: left;
   width: 40%;
   border-bottom-right-radius: 12px;
   border-top-right-radius: 12px;
- 
-  
 }
+
+.individual-recipe-container {
+  /* margin-top: 5%; */
+}
+
+.edit-recipe-input-field {
+  border: none;
+  border-bottom: 2px solid black;
+}
+
 .recipe-form-image{
   width: 50%;
   border-bottom-right-radius: 12px;
@@ -245,6 +253,7 @@ float: left;
   border-radius: 12px;
   display: flex;
   margin: auto;
+  margin-top: 15%;
   align-items: center;
 }
 .recipeForm{
@@ -322,6 +331,7 @@ float: left;
   padding: 5px;
   font-family: 'Righteous'; 
   margin: 2px;
+  cursor: pointer;
 }
 .update-button{
   margin-top: 10px;
@@ -353,12 +363,13 @@ float: left;
 }
 
 .individual-recipe-container {
+  background-color: rgba(255,255,255,0.5);
   width: 80%;
   margin: auto;
   margin-top: 2%;
   margin-bottom: 5%;
-  border: 2px solid black;
   padding: 1%;
+  border-radius: 12px;
 }
 
 a {

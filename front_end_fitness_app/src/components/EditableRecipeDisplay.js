@@ -55,28 +55,30 @@ const EditableRecipeDisplay = ({editStatusSwitch, recipe, updatedRecipe}) => {
 
     return (
         <>
-        <button className="cancel_button" onClick={editStatusSwitch}>Cancel</button>
-        <form onSubmit={handleUpdatedRecipe}>
-            <label htmlFor="name">Name:</label>
-            <input value={updatedName} placeholder= {updatedName} onChange={handleNameChange} type="text" id="name" ></input>
+        <div className="editable-recipe-form">
+            <button className="cancel_button" onClick={editStatusSwitch}>Cancel</button>
+            <form onSubmit={handleUpdatedRecipe}>
+                <label htmlFor="name">Name:</label>
+                <input className="edit-recipe-input-field" value={updatedName} placeholder= {updatedName} onChange={handleNameChange} type="text" id="name" ></input>
 
-            <label htmlFor="meal type">Meal Type:</label>
-            <input value={updatedMealType} placeholder= {updatedMealType} onChange={handleMealTypeChange} type="text" id="meal type" ></input>
+                <label htmlFor="meal type">Meal Type:</label>
+                <input className="edit-recipe-input-field" value={updatedMealType} placeholder= {updatedMealType} onChange={handleMealTypeChange} type="text" id="meal type" ></input>
 
-            <label htmlFor="notes">Notes:</label>
-            <input value={updatedNotes} onChange={handleNotesChange} type="text" id="notes" ></input>
+                <label htmlFor="notes">Notes:</label>
+                <input className="edit-recipe-input-field" value={updatedNotes} onChange={handleNotesChange} type="text" id="notes" ></input>
 
-            <label htmlFor="calories">Calories:</label>
-            <input value={updatedCalories} onChange={handleCaloriesChange} type="number" id="calories" ></input>
+                <label htmlFor="calories">Calories:</label>
+                <input className="edit-recipe-input-field" value={updatedCalories} onChange={handleCaloriesChange} type="number" id="calories" ></input>
 
-            <label htmlFor="week">Week:</label>
-            <input value={updatedWeek} onChange={handleWeekChange} type="number" id="week" ></input>
+                <label htmlFor="week">Week:</label>
+                <input className="edit-recipe-input-field" value={updatedWeek} onChange={handleWeekChange} type="number" id="week" ></input>
 
-            <label htmlFor="day">Day:</label>
-            <input value={updatedDay} onChange={handleDayChange} type="text" id="day" ></input>
+                <label htmlFor="day">Day:</label>
+                <input className="edit-recipe-input-field" value={updatedDay} onChange={handleDayChange} type="text" id="day" ></input>
 
-            <input className="buttons" type="submit" value="Update Recipe"></input>
-        </form>
+                <input className="buttons" type="submit" value="Update Recipe"></input>
+            </form>
+        </div>
         </>
     )
 }

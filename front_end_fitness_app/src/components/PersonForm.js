@@ -78,7 +78,6 @@ const PersonForm = ({onPersonSubmission}) => {
                 <input className="submitPersonButton" type="submit" value= "Register" />
 
             </form>
-
             <img className="signUp-form-image" src={signUp} />
         </div>
 

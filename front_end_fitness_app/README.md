@@ -1,12 +1,28 @@
-# Getting Started with Create React App
+# NotMyFitnessPal: front-end project 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+By [Darshil](https://github.com/DarshilDholakia), [Wendy](https://github.com/WendyDiane), [Robyn](https://github.com/RobynGar) and [Rosa](https://github.com/rosaacodes).
 
-## Available Scripts
+## Project Description
 
-In the project directory, you can run:
+A front-end project to support the back-end food tracking API using HTML, CSS and React.
 
-### `npm start`
+
+## Installation and Setup Instructions
+
+Clone down this repository:  https://github.com/RobynGar/fitness_front_end 
+
+You will need node and npm installed globally on your machine.
+
+
+## Installation:
+
+### To Initiate Database:
+
+Please see the README.md file for the back-end food tracking API project. Then run the app on IntelliJ or run on terminal.
+
+### To Start:
+
+npm start
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -14,12 +30,31 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+### To Install:
+
+npm install
+
+npm install –save react-router-dom
+
+### To Start Server:
+
+npm start
+
+npm i base --save react-select
+
+### To Visit App:
+
+localhost:3000/
+
+
+## Further Instructions:
+
+### npm test
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### npm run build
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -29,7 +64,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### npm run eject
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
@@ -65,6 +100,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+### npm run build fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+

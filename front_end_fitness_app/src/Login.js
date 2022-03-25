@@ -18,8 +18,8 @@ const Login = ({peopleList, recipeList}) => {
 
     return (
         <>
-            <h1>Login</h1>
-            <div className="formContainer">
+            <h1 className='page-heading'>Login</h1>
+            <div className="login-form-container">
             <form  className="form-login" onSubmit={() => {
                 // console.log(user.id);
                 login(id)

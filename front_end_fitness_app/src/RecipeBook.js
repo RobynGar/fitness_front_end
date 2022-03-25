@@ -35,14 +35,12 @@ const RecipeBook = ({recipeList, onRecipeFilter, filtered}) => {
 
     return(
         <div className="recipeContext">
-            <h1>All Recipes</h1>
+            <h1 className='page-heading'>All Recipes</h1>
             <Select 
                 className="filter-bar"
                 options={mealTypeOptions}
                 onChange={onRecipeFilter} /> 
             {filteredMap}
-            
-            
         </div>
     )
 }

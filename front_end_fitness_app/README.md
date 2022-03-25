@@ -1,18 +1,53 @@
-# Getting Started with Create React App
+# NotMyFitnessPal - front-end project 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+By Darshil, Wendy, Robyn and Rosa.
 
-## Available Scripts
+## Project Description
 
-In the project directory, you can run:
+A front-end food project to support the back-end food tracking API using HTML, CSS and React.
 
-### `npm start`
+
+## Installation and Setup Instructions
+
+Clone down this repository:  https://github.com/RobynGar/fitness_front_end 
+
+You will need node and npm installed globally on your machine.
+
+
+## Installation:
+
+To Initiate Database:
+
+Please see the README.md file for the back-end food tracking API project. Then run the app on IntelliJ or run on terminal.
+
+### To Start:
+
+npm start
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+### To Install:
+
+npm install
+
+npm install –save react-router-dom
+
+### To Start Server:
+
+npm start
+
+npm i base --save react-select
+
+### To Visit App:
+
+localhost:3000/
+
+
+## Further Intructions:
 
 ### `npm test`
 
@@ -68,3 +103,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+

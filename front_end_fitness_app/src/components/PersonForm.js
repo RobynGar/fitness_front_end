@@ -58,26 +58,28 @@ const PersonForm = ({onPersonSubmission}) => {
 
     return(
         <>
-        <div className="personFormContainer">
+        <div className="person-form-with-image">
+            <div className="person-form-container">
             <form className="personform" onSubmit={handlePersonFormSubmit}>
                 <label htmlFor="name">Name:</label>
-                <input placeholder="Wendy" type="text" id="name" value={name} onChange={handleNameChange} />
+                <input className="person-form-input-fields" placeholder="Wendy" type="text" id="name" value={name} onChange={handleNameChange} />
 
                 <label htmlFor="age">Age:</label>
-                <input placeholder= "24" type="number" id="age" value={age} onChange={handleAgeChange} />
+                <input className="person-form-input-fields" placeholder= "24" type="number" id="age" value={age} onChange={handleAgeChange} />
 
                 <label htmlFor="height">Height (cm):</label>
-                <input placeholder= "65.0" type="number" id="height" value={height} onChange={handleHeightChange} />
+                <input className="person-form-input-fields" placeholder= "65.0" type="number" id="height" value={height} onChange={handleHeightChange} />
 
                 <label htmlFor="weight">Weight (kg):</label>
-                <input placeholder= "166.0" type="number" id="weight" value={weight} onChange={handleWeightChange} />
+                <input className="person-form-input-fields" placeholder= "166.0" type="number" id="weight" value={weight} onChange={handleWeightChange} />
 
                 <label htmlFor="calorieTarget">Calorie Target (kcal):</label>
-                <input placeholder= "1700" type="number" id="calorieTarget" value={calorieTarget} onChange={handleCalorieTargetChange} />
+                <input className="person-form-input-fields" placeholder= "1700" type="number" id="calorieTarget" value={calorieTarget} onChange={handleCalorieTargetChange} />
 
                 <input className="submitPersonButton" type="submit" value= "Register" />
 
             </form>
+            </div>
             <img className="signUp-form-image" src={signUp} />
         </div>
 

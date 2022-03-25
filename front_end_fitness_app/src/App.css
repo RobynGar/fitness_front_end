@@ -242,17 +242,32 @@ float: left;
 .recipeForm{
   margin: 10%;
 }
-.personFormContainer{
-  background-color: var(--orange);
-  width:60%;
+.person-form-with-image{
+  background-color: rgba(255,255,255,0.7);
+  width:40%;
   border-radius: 12px;
   display: flex;
+  text-align: center;
   margin: auto;
+  flex-direction: row;
+  border: 2px solid black;
+}
 
+.person-form-container {
+  display: flex;
+  align-items: center;
 }
 
 .personform{
-  margin: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.person-form-input-fields {
+  margin-bottom: 5%;
+  border: none;
+  border-bottom: 2px solid black;
+  padding: 10px;
 }
 
 .submitPersonButton{
@@ -267,16 +282,8 @@ float: left;
 }
 
 .signUp-form-image{
-  /* width: 50%;
-  height: 30%; */
   border-bottom-right-radius: 12px;
   border-top-right-radius: 12px;
-  /* align-items: flex-end; */
-  /* display: inline-block; */
-  /* max-width: 100%;
-  max-height: 100%; */
-  text-align: right;
-
 }
 .delete-button{
   margin-top: 10px;

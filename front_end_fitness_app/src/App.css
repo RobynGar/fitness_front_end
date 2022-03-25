@@ -340,7 +340,11 @@ a {
   cursor: pointer;
 }
 
-a:hover {
+.previous:hover {
+  background-color: #ddd;
+  color: black;
+}
+.next:hover {
   background-color: #ddd;
   color: black;
 }

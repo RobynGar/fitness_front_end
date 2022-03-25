@@ -7,9 +7,10 @@ const UserProvider = ({ children }) => {
     const [user, setUser] = useState({ id: '', auth: false });
   
     // Login updates the user data with a name parameter
-    const login = (id) => {
+    const login = (id, username) => {
       setUser((user) => ({
         id: id,
+        username: username,
         auth: true,
       }));
     };
@@ -18,6 +19,7 @@ const UserProvider = ({ children }) => {
     const logout = () => {
       setUser((user) => ({
         id: '',
+        username: '',
         auth: false,
       }));
     };

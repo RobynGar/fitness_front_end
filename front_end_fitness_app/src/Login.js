@@ -19,16 +19,15 @@ const Login = ({peopleList, recipeList}) => {
     return (
         <>
             <h1>Login</h1>
-            <div className="formContainer">
-            <form  className="form-login" onSubmit={() => {
-                // console.log(user.id);
-                login(id)
-            }}>
-                <label htmlFor="id">UserName:</label>
-                <input className="login-field" onChange={handleIdChange} placeholder="id number" name="id" type="number" min={1} max={peopleList.length} required={true} ref={idRef} />
-            <input id="login-button" type="submit" value="Login"/>
-            </form>
-            <img className="strawberry" src={strawberryHomePic} />
+            <div className="recipe-submission-form-container">
+                <form  className="form-login" onSubmit={() => {
+                    login(id)
+                }}>
+                    <label htmlFor="id">UserName:</label>
+                    <input className="login-field" onChange={handleIdChange} placeholder="id number" name="id" type="number" min={1} max={peopleList.length} required={true} ref={idRef} />
+                    <input id="login-button" type="submit" value="Login"/>
+                </form>
+                <img className="strawberry" src={strawberryHomePic} />
             </div>
         </>
     )

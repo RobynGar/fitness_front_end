@@ -267,6 +267,13 @@ float: left;
   padding: 10px;
 }
 
+.login-field {
+  margin-bottom: 5%;
+  border: none;
+  border-bottom: 2px solid black;
+  padding: 10px;
+}
+
 .person-form-with-image{
   background-color: rgba(255,255,255,0.7);
   width:50%;

@@ -6,14 +6,18 @@
 const Recipe = ({recipe}) => {
     return(
         <> 
-        {/* extracting name component from recipe prop */}
-        <h2> {recipe.name} </h2>
-        <ul>
-            <li>{recipe.mealType}</li>
-            <li>{recipe.notes}</li>
-            <li>Calories: {recipe.calories}</li>
-            
-        </ul>
+        <div className='individual-recipe-container grow'>
+            {/* extracting name component from recipe prop */}
+            <h2> {recipe.name} </h2>
+            {/* <ul>
+                <li>{recipe.mealType}</li>
+                <li>{recipe.notes}</li>
+                <li>Calories: {recipe.calories}</li>
+            </ul> */}
+            <p>{recipe.mealType}</p>
+            <p>{recipe.notes}</p>
+            <p>Calories: {recipe.calories}</p>
+        </div>
         </>
     )
 }

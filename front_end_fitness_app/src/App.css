@@ -64,6 +64,11 @@ h1{
   align-items: center;
 }
 
+.page-heading {
+  display: flex;
+  justify-content: center;
+}
+
 .home-pic {
   /* margin-right: 0;
   margin-left: auto;
@@ -145,6 +150,7 @@ h1{
   border: none;
   padding: 5px;
   font-family: 'Righteous';
+  cursor: pointer;
 }
 
 #sign-out-button {
@@ -154,6 +160,7 @@ h1{
   padding: 5px;
   font-family: 'Righteous';
   align-items: center;
+  cursor: pointer;
 }
 #inspiration{
   height: 400px;
@@ -219,12 +226,20 @@ float: left;
 }
 .strawberry{
   height: auto;
-  width: 50%;
+  width: 40%;
   border-bottom-right-radius: 12px;
   border-top-right-radius: 12px;
- 
-  
 }
+
+.individual-recipe-container {
+  /* margin-top: 5%; */
+}
+
+.edit-recipe-input-field {
+  border: none;
+  border-bottom: 2px solid black;
+}
+
 .recipe-form-image{
   width: 50%;
   border-bottom-right-radius: 12px;
@@ -232,16 +247,26 @@ float: left;
   align-items: flex-end;
 
 }
-.recipeFormContainer{
-  background-color: #fbfbfb;
-  width:80%;
+.recipe-form-container{
+  background-color: rgba(255,255,255,0.7);
+  width:60%;
   border-radius: 12px;
   display: flex;
   margin: auto;
+  margin-top: 15%;
+  align-items: center;
 }
 .recipeForm{
   margin: 10%;
 }
+
+.recipe-form-input-fields {
+  margin-bottom: 5%;
+  border: none;
+  border-bottom: 2px solid black;
+  padding: 10px;
+}
+
 .person-form-with-image{
   background-color: rgba(255,255,255,0.7);
   width:50%;
@@ -280,6 +305,7 @@ float: left;
   font-family: 'Righteous';
   align-items: center;
   background-color: var(--heading-colour);
+  cursor: pointer;
 }
 
 .signUp-form-image{
@@ -295,6 +321,7 @@ float: left;
   font-family: 'Righteous'; 
   margin: 2px;
   width: 5%;
+  cursor: pointer;
 }
 .buttons{
   margin-top: 10px;
@@ -304,6 +331,7 @@ float: left;
   padding: 5px;
   font-family: 'Righteous'; 
   margin: 2px;
+  cursor: pointer;
 }
 .update-button{
   margin-top: 10px;
@@ -314,6 +342,7 @@ float: left;
   font-family: 'Righteous'; 
   margin: 2px;
   width: 5%;
+  cursor: pointer;
 }
 .cancel_button{
   margin-top: 10px;
@@ -324,12 +353,23 @@ float: left;
   font-family: 'Righteous'; 
   margin: 2px;
   width: 5%;
+  cursor: pointer;
 }
 
 .myRecipe {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+}
+
+.individual-recipe-container {
+  background-color: rgba(255,255,255,0.5);
+  width: 80%;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  padding: 1%;
+  border-radius: 12px;
 }
 
 a {

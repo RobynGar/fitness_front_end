@@ -15,7 +15,7 @@ const MyRecipeBook = ({onRecipeSubmission, recipeList, filteredById, deleteRecip
 
     return(
         <div className="recipeContext">
-            <h1>My Recipes</h1>
+            <h1 className='page-heading'>My Recipes</h1>
             <h2>Hello, {user.username}</h2>
             {filteredRecipeByIdMap}
             <RecipeForm onRecipeSubmission={onRecipeSubmission}/>

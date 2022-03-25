@@ -11,10 +11,10 @@ const MyRecipe = ({recipe, deleteRecipeFromDatabase, updatedRecipe}) => {
     }
 
     return (
-        <div className="myRecipe">
-        <h2> {recipe.name} </h2>
-        <button onClick={function() {deleteRecipeFromDatabase(recipe.id)}} className="delete-button">Delete</button>
-        {editStatus ? <EditableRecipeDisplay recipe={recipe} editStatusSwitch={editStatusSwitch} updatedRecipe={updatedRecipe}/> : <FinalRecipeDisplay editStatusSwitch={editStatusSwitch} recipe={recipe}/>}
+        <div className="individual-recipe-container">
+            <h2> {recipe.name} </h2>
+            <button onClick={function() {deleteRecipeFromDatabase(recipe.id)}} className="delete-button">Delete</button>
+            {editStatus ? <EditableRecipeDisplay recipe={recipe} editStatusSwitch={editStatusSwitch} updatedRecipe={updatedRecipe}/> : <FinalRecipeDisplay editStatusSwitch={editStatusSwitch} recipe={recipe}/>}
         </div>
     )
 }

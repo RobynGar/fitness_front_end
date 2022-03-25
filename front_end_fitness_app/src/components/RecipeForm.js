@@ -62,29 +62,29 @@ const RecipeForm = ({onRecipeSubmission}) => {
 
     return (
         <>
-            <div className="recipeFormContainer">
-            <form className="recipeForm" onSubmit={handleRecipeFormSubmit}>
-                <label htmlFor="name">Name:</label>
-                <input placeholder="Muesli" type="text" id="name" value={name} onChange={handleNameChange} ></input>
+            <div className="recipe-form-container">
+                <form className="recipeForm" onSubmit={handleRecipeFormSubmit}>
+                    <label htmlFor="name">Name:</label>
+                    <input className="recipe-form-input-fields" placeholder="Muesli" type="text" id="name" value={name} onChange={handleNameChange} ></input>
 
-                <label htmlFor="meal type">Meal Type:</label>
-                <input placeholder="BREAKFAST" type="text" id="meal type" value={mealType} onChange={handleMealTypeChange}></input>
+                    <label htmlFor="meal type">Meal Type:</label>
+                    <input className="recipe-form-input-fields" placeholder="BREAKFAST" type="text" id="meal type" value={mealType} onChange={handleMealTypeChange}></input>
 
-                <label htmlFor="notes">Notes:</label>
-                <input placeholder="Homemade" type="text" id="notes" value={notes} onChange={handleNotesChange}></input>
+                    <label htmlFor="notes">Notes:</label>
+                    <input className="recipe-form-input-fields" placeholder="Homemade" type="text" id="notes" value={notes} onChange={handleNotesChange}></input>
 
-                <label htmlFor="calories">Calories:</label>
-                <input placeholder="200" type="number" id="calories" value={calories} onChange={handleCaloriesChange}></input>
+                    <label htmlFor="calories">Calories:</label>
+                    <input className="recipe-form-input-fields" placeholder="200" type="number" id="calories" value={calories} onChange={handleCaloriesChange}></input>
 
-                <label htmlFor="week">Week:</label>
-                <input placeholder="1" type="number" id="week" value={week} onChange={handleWeekChange}></input>
+                    <label htmlFor="week">Week:</label>
+                    <input className="recipe-form-input-fields" placeholder="1" type="number" id="week" value={week} onChange={handleWeekChange}></input>
 
-                <label htmlFor="day">Day:</label>
-                <input placeholder="MONDAY" type="text" id="day" value={day} onChange={handleDayChange}></input>
+                    <label htmlFor="day">Day:</label>
+                    <input className="recipe-form-input-fields" placeholder="MONDAY" type="text" id="day" value={day} onChange={handleDayChange}></input>
 
-                <input className="submitButton" type="submit" value="Submit Recipe"></input>
-            </form>
-            <img className="recipe-form-image" src={granola} />
+                    <input className="submitButton" type="submit" value="Submit Recipe"></input>
+                </form>
+                <img className="recipe-form-image" src={granola} />
             </div>
 
         </>

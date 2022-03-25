@@ -74,9 +74,13 @@ function App() {
     setFilteredRecipe(event.value);
     
   }
-
+  const uniqueRecipes = recipeList.filter((recipe, index, array) => {
+    return array.indexOf(array.find(element => {
+        return element.notes === recipe.notes && element.name === recipe.name
+    })) === index
+});
 const filtered = React.useMemo(() => {
-  return recipeList.filter(recipe => {
+  return uniqueRecipes.filter(recipe => {
     return filteredRecipe.length > 0 ? recipe.mealType.includes(filteredRecipe) : true;
   })
  }, [filteredRecipe, recipeList]);

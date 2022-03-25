@@ -72,7 +72,6 @@ h1{
   margin: 10px; */
   width: 40%;
   height: 400px;
-  padding-right: 200px;
 }
 
 .grow { 
@@ -136,7 +135,7 @@ h1{
 .recipeContext{
   margin-left: 30px;
 }
-form{
+.form-login {
   margin: auto;
 }
 .submitButton{
@@ -157,17 +156,22 @@ form{
   align-items: center;
 }
 #inspiration{
-  display: flex;
-  justify-content: center;
   height: 400px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
-/* #root{
-  background: -webkit-linear-gradient(110deg, #fbfbfb 40%, rgba(0, 0, 0, 0) 30%), -webkit-radial-gradient(farthest-corner at 0% 0%, #b1d056 70%,  #e0ff59 70%);
-  background: -o-linear-gradient(110deg, #fbfbfb 40%, rgba(0, 0, 0, 0) 30%), -o-radial-gradient(farthest-corner at 0% 0%, #b1d056 70%, #e0ff59 70%);
-  background: -moz-linear-gradient(110deg, #fbfbfb 40%, rgba(0, 0, 0, 0) 30%), -moz-radial-gradient(farthest-corner at 0% 0%, #b1d056 70%, #e0ff59 70%);
-  background: linear-gradient(110deg, #fbfbfb 40%, rgba(0, 0, 0, 0) 30%), radial-gradient(farthest-corner at 0% 0%, #b1d056 70%, #e0ff59 70%);
-  margin-bottom: 100px;
-} */
+
+.inspiration-container {
+  margin: auto;
+  height: 100%;
+  background-color: rgba(255,255,255,0.5);
+  width: fit-content;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 12px;
+}
+
 .formContainer{
   background-color: var(--orange);
   width:80%;
@@ -185,7 +189,8 @@ label{
   display: inline-block;
   float: left;
   clear: left;
-  width: 250px;
+  width: 156px;
+
   text-align: left;
 }
 input {
@@ -231,6 +236,127 @@ float: left;
 .recipeForm{
   margin: 10%;
 }
-.myRecipe{
-  margin-right: 50%;
+.personFormContainer{
+  background-color: var(--orange);
+  width:80%;
+  border-radius: 12px;
+  display: flex;
+  margin: auto;
+
+}
+
+.personform{
+  margin: 10%;
+}
+
+.submitPersonButton{
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: none;
+  padding: 5px;
+  font-family: 'Righteous';
+  align-items: center;
+  background-color: var(--heading-colour);
+}
+
+.signUp-form-image{
+  /* width: 50%;
+  height: 30%; */
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
+  /* align-items: flex-end; */
+  /* display: inline-block; */
+  max-width: 100%;
+  max-height: 100%;
+  text-align: right;
+
+}
+.delete-button{
+  margin-top: 10px;
+  border-radius: 12px;
+  background-color: #ffa33e;
+  border: none;
+  padding: 5px;
+  font-family: 'Righteous'; 
+  margin: 2px;
+  width: 5%;
+}
+.buttons{
+  margin-top: 10px;
+  border-radius: 12px;
+  background-color: #ffa33e;
+  border: none;
+  padding: 5px;
+  font-family: 'Righteous'; 
+  margin: 2px;
+}
+.update-button{
+  margin-top: 10px;
+  border-radius: 12px;
+  background-color: #ffa33e;
+  border: none;
+  padding: 5px;
+  font-family: 'Righteous'; 
+  margin: 2px;
+  width: 5%;
+}
+.cancel_button{
+  margin-top: 10px;
+  border-radius: 12px;
+  background-color: #ffa33e;
+  border: none;
+  padding: 5px;
+  font-family: 'Righteous'; 
+  margin: 2px;
+  width: 5%;
+}
+
+.myRecipe {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  height: 6%;
+  cursor: pointer;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+  display: none;
+}
+
+.next {
+  background-color: #04AA6D;
+  color: white;
+  display: none;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.story-text {
+  font-family:Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+/* .stories-item {
+  margin: auto;
+} */
+
+.stories-img {
+  width: 100%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }

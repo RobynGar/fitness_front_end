@@ -32,7 +32,7 @@ public class SpringGlobalConfig implements WebMvcConfigurer {
 
                 .allowedHeaders("*")
 
-                .allowedMethods("DELETE");
+                .allowedMethods("DELETE", "PUT");
 
         registry.addMapping("/person/all")
 

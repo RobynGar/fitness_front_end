@@ -20,7 +20,7 @@ const Login = ({peopleList, recipeList}) => {
         <>
             <h1>Login</h1>
             <div className="formContainer">
-            <form  className="form" onSubmit={() => {
+            <form  className="form-login" onSubmit={() => {
                 // console.log(user.id);
                 login(id)
             }}>

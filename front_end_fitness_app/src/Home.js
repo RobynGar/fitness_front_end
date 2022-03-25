@@ -62,7 +62,7 @@ const Home = () => {
             <section id="inspiration">
                 <div className="inspiration-container">
                     <Story story={stories[currentStoryIndex]}/>
-                    <div>
+                    <div className="buttons_for_stories">
                         <a onClick={handlePreviousButtonClick} className="previous round">&#8249;</a>
                         <a onClick={handleNextButtonClick} className="next round">&#8250;</a>
                     </div>
